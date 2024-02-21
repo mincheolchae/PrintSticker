@@ -67,7 +67,7 @@
             ><span class="span gmarketsans-bold-black-22px">기타 질병</span>
           </div>
           <p class="x202208-3kg gmarketsans-medium-black-22px">
-            <span class="dogBirth">2022.08.</span><br /><span class="dogGender">수컷</span><br /><span class="dogWeight">3</span>kg (<span class="dogSize">소</span>)<br /><span class="dogActivityLevel">적음</span><br />산책 <span class="dogWalkingCountPerWeek">5</span>회 이상, 평균 <span class="dogWalkingTimePerOneTime">30</span>분<br /><span class="dogInedibleFood">없음</span><br /><span class="dogCaution">아토피 피부염 치료 중</span>
+            <span class="dogBirth">2022.08.</span><br /><span class="dogGender">수컷</span><br /><span class="dogWeight">3</span>kg (<span class="dogSize">소</span>)<br /><span class="dogActivityLevel">적음</span><br />산책 <span class="dogWalkingCountPerWeek">5</span>회 이상, 평균 <span class="dogWalkingTimePerOneTime">30분</span><br /><span class="dogInedibleFood">없음</span><br /><span class="dogCaution">아토피 피부염 치료 중</span>
           </p>
           <div class="text-20 gmarketsans-bold-black-22px">
             <span class="span gmarketsans-bold-black-22px">견종<br /></span
@@ -208,13 +208,101 @@
               alert('plan is wrong!')
           }
 
-          /** 레시피 한끼 급여량
+          /** 레시피 한끼 급여량 + 선택 레시피
           let spWeight = parseFloat(sp);
           let tbWeight = parseFloat(tb);
           let dlWeight = parseFloat(dl);
           let lbWeight = parseFloat(lb);
           */
 
+          //출생년월
+          let year = dogBirth.substring(0,4);
+          let month = dogBirth.substring(4,6);
+          document.querySelector('.dogBirth').innerHTML = year + '.' + month + '.';
+
+          //견종
+          document.querySelector('.dogType').innerHTML = dogType;
+
+          //성별
+          document.querySelector('.dogGender').innerHTML = dogGender === 'MALE' ? '수컷' : '암컷';
+
+          //중성화 여부
+          document.querySelector('.dogNeutralization').innerHTML = dogNeutralization === 'YES' ? '완료' : '미완료';
+
+          //몸무게
+          document.querySelector('.dogWeight').innerHTML = dogWeight;
+          if (dogSize === 'LARGE') {
+              dogSize = '대';
+          } else if (dogSize === 'MIDDLE') {
+              dogSize = '중';
+          } else {
+              dogSize = '소';
+          }
+
+          //사이즈
+          document.querySelector('.dogSize').innerHTML = dogSize;
+
+          //현재 상태
+          if (dogStatus === 'LACTATING') {
+              dogStatus = '수유중';
+          } else if (dogStatus === 'NEED_DIET') {
+              dogStatus = '다이어트필요';
+              document.querySelector('.dogStatus').style.letterSpacing = '-2.5px';
+          } else if (dogStatus === 'OBESITY') {
+              dogStatus = '비만';
+          } else if (dogStatus === 'PREGNANT') {
+              dogStatus = '임신중';
+          } else {
+              dogStatus = '건강함';
+          }
+          document.querySelector('.dogStatus').innerHTML = dogStatus;
+
+          //활동량
+          if (dogActivityLevel === 'VERY LITTLE') {
+              dogActivityLevel = '매우 적음';
+          } else if (dogActivityLevel === 'LITTLE') {
+              dogActivityLevel = '다소 적음';
+          } else if (dogActivityLevel === 'MUCH') {
+              dogActivityLevel = '많음';
+          } else if (dogActivityLevel === 'VERY MUCH') {
+              dogActivityLevel = '매우 많음';
+          } else {
+              dogActivityLevel = '보통';
+          }
+          document.querySelector('.dogActivityLevel').innerHTML = dogActivityLevel;
+
+          //간식량
+          if (dogSnackCountLevel === 'LITTLE') {
+              dogSnackCountLevel = '적음';
+          } else if (dogSnackCountLevel === 'MUCH') {
+              dogSnackCountLevel = '많음';
+          } else {
+              dogSnackCountLevel = '보통';
+          }
+          document.querySelector('.dogSnackCountLevel').innerHTML = dogSnackCountLevel;
+
+          //산책량(1주당)
+          document.querySelector('.dogWalkingCountPerWeek').innerHTML = dogWalkingCountPerWeek;
+
+          //산책량(1회당)
+          let walkingTime = dogWalkingTimePerOneTime.split('.');
+          let hour = walkingTime[0] === '0' ? '' : walkingTime[0] + '시간 ';
+          let minute = walkingTime[1] === '5' ? '30분' : '';
+          document.querySelector('.dogWalkingTimePerOneTime').innerHTML = hour + minute;
+
+          //식이알러지
+          let foodAllergy;
+          if (dogInedibleFood === 'NONE') {
+              foodAllergy = '없음';
+          } else if (dogInedibleFood === 'ETC') {
+              foodAllergy = dogInedibleFoodEtc;
+          } else {
+              foodAllergy = dogInedibleFood;
+          }
+          document.querySelector('.dogInedibleFood').innerHTML = foodAllergy;
+
+          //기타 질병
+          document.querySelector('.dogCaution').innerHTML = dogCaution === 'NONE' ? '없음' : dogCaution;
 
 
         })
