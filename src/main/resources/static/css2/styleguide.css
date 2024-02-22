@@ -4,9 +4,9 @@
  
   --font-size-l: 23px;
   --font-size-m: 22px;
-  --font-size-s: 20px;
+  --font-size-s: 20.5px;
   --font-size-xl: 24px;
-  --font-size-xs: 19px;
+  --font-size-xs: 20px;
   --font-size-xxl: 90px;
   --font-size-xxs: 14.5px;
  
@@ -64,7 +64,7 @@
 .gmarketsans-bold-white-20px {
   color: var(--white);
   font-family: var(--font-family-gmarket_sans-bold);
-  font-size: var(--font-size-s);
+  font-size: var(--font-size-xs);
   font-style: normal;
   font-weight: 700;
 }
@@ -72,7 +72,7 @@
 .gmarketsans-bold-black-20-5px {
   color: var(--black);
   font-family: var(--font-family-gmarket_sans-bold);
-  font-size: 20.5px;
+  font-size: var(--font-size-s);
   font-style: normal;
   font-weight: 700;
 }

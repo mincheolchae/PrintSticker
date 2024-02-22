@@ -6,13 +6,13 @@
   font-family: "Gmarket Sans-Medium";
   font-style: normal;
   font-weight: 500;
-  src: url("../fonts/GmarketSansMedium.otf") format("opentype");
+  src: url("../fonts2/GmarketSansMedium.otf") format("opentype");
 }
 @font-face {
   font-family: "Gmarket Sans-Bold";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/GmarketSansBold.otf") format("opentype");
+  src: url("../fonts2/GmarketSansBold.otf") format("opentype");
 }
 
 
@@ -38,12 +38,6 @@
   box-sizing: border-box;
 }
 
-.png-1 {
-  height: 34px;
-  object-fit: cover;
-  width: 197px;
-}
-
 .flex-row {
   align-items: flex-start;
   display: flex;
@@ -57,6 +51,38 @@
   height: 15px;
   margin-left: 6.0px;
   min-width: 372px;
+}
+
+.line-1 {
+  height: 1px;
+  margin-right: 1.0px;
+  margin-top: 16px;
+  object-fit: cover;
+  width: 477px;
+}
+
+.x469g {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 0;
+  display: -webkit-box;
+  letter-spacing: -6.30px;
+  line-height: normal;
+  margin-right: 2.0px;
+  margin-top: 28px;
+  padding-bottom: 28px;
+  min-height: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 422px;
+}
+
+.line-2 {
+  height: 1px;
+  margin-right: 1.0px;
+  margin-top: 0;
+  object-fit: cover;
+  width: 477px;
 }
 
 .rectangle-9 {
@@ -152,6 +178,14 @@
   width: 1px;
 }
 
+.line-12 {
+  height: 167px;
+  left: 355px;
+  position: absolute;
+  top: 36px;
+  width: 1px;
+}
+
 .span {
   letter-spacing: 0;
 }
@@ -160,25 +194,14 @@
   letter-spacing: -2.5px;
 }
 
-.x469g {
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 0;
-  display: -webkit-box;
-  letter-spacing: -6.30px;
-  line-height: normal;
-  margin-right: 2.0px;
-  margin-top: 28px;
-  min-height: 90px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 422px;
-}
-
 .x202208-3kg {
   left: 117px;
   letter-spacing: 0;
   line-height: 42px;
   position: absolute;
   top: 34px;
+}
+
+.span1-1 {
+  letter-spacing: -1.8px;
 }

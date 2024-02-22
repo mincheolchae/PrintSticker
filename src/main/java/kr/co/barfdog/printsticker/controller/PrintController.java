@@ -123,7 +123,7 @@ public class PrintController {
         model.addAttribute("datas", dataList); // 5
 
 
-        return "frame-1";
+        return "frame-4";
     }
 
 

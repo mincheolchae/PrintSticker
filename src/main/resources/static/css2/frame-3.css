@@ -1,42 +1,44 @@
-/* screen - frame-2 */
+/* screen - frame-3 */
 
-.frame-2 {
+.frame-3 {
   align-items: center;
   background-color: var(--white);
   display: flex;
   flex-direction: column;
   height: 700px;
+  overflow: hidden;
   width: 500px;
 }
 
-.frame-2 .overlap-group2 {
+.frame-3 .overlap-group2 {
   align-items: center;
   background-color: var(--black);
   display: flex;
   height: 60px;
   justify-content: flex-end;
+  margin-right: 2.0px;
   min-width: 500px;
   padding: 0 151px;
 }
 
-.frame-2 .png-2 {
+.frame-3 .png-3 {
   height: 34px;
   object-fit: cover;
   width: 197px;
 }
 
-.frame-2 .group-4 {
+.frame-3 .group-5 {
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-right: 2.0px;
+  margin-right: 4.0px;
   margin-top: 21px;
   min-height: 43px;
   width: 424px;
 }
 
-.frame-2 .rectangle-4 {
+.frame-3 .rectangle-4 {
   background-color: var(--white);
   border: 1px solid;
   border-color: var(--black);
@@ -45,7 +47,7 @@
   width: 20px;
 }
 
-.frame-2 .text-23 {
+.frame-3 .text-13 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 9px;
@@ -54,16 +56,17 @@
   white-space: nowrap;
 }
 
-.frame-2 .rectangle-5 {
-  background-color: var(--black);
+.frame-3 .rectangle-5 {
+  background-color: var(--white);
   border: 1px solid;
+  border-color: var(--black);
   height: 20px;
   margin-left: 33px;
   margin-top: 1px;
   width: 20px;
 }
 
-.frame-2 .text-24 {
+.frame-3 .text-14 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 9px;
@@ -72,17 +75,16 @@
   white-space: nowrap;
 }
 
-.frame-2 .rectangle-6 {
-  background-color: var(--white);
+.frame-3 .rectangle-6 {
+  background-color: var(--black);
   border: 1px solid;
-  border-color: var(--black);
   height: 20px;
   margin-left: 28px;
   margin-top: 1px;
   width: 20px;
 }
 
-.frame-2 .text-25 {
+.frame-3 .text-15 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 9px;
@@ -90,7 +92,7 @@
   white-space: nowrap;
 }
 
-.frame-2 .text-26 {
+.frame-3 .text-16 {
   letter-spacing: 0;
   line-height: normal;
   min-height: 15px;
@@ -98,7 +100,7 @@
   white-space: nowrap;
 }
 
-.frame-2 .text-27 {
+.frame-3 .text-17 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 62px;
@@ -107,7 +109,7 @@
   white-space: nowrap;
 }
 
-.frame-2 .text-28 {
+.frame-3 .text-18 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 81px;
@@ -115,46 +117,29 @@
   white-space: nowrap;
 }
 
-.frame-2 .line-1 {
-  height: 1px;
-  margin-right: 1.0px;
-  margin-top: 16px;
-  object-fit: cover;
-  width: 477px;
-}
-
-.frame-2 .line-2 {
-  height: 1px;
-  margin-right: 1.0px;
-  margin-top: 32px;
-  object-fit: cover;
-  width: 477px;
-}
-
-.frame-2 .group-5 {
+.frame-3 .group-5-1 {
   align-items: flex-start;
   display: flex;
-  margin-left: 1.0px;
   margin-top: 19px;
-  min-width: 267px;
+  min-width: 268px;
 }
 
-.frame-2 .overlap-group {
+.frame-3 .overlap-group {
   height: 23px;
   position: relative;
-  width: 267px;
+  width: 268px;
 }
 
-.frame-2 .rectangle-7 {
+.frame-3 .rectangle-7 {
   background-color: var(--black);
   height: 19px;
-  left: 134px;
+  left: 135px;
   position: absolute;
   top: 1px;
   width: 19px;
 }
 
-.frame-2 .lb-28 {
+.frame-3 .lb-20 {
   left: 0;
   letter-spacing: -0.46px;
   line-height: normal;
@@ -164,7 +149,7 @@
   white-space: nowrap;
 }
 
-.frame-2 .overlap-group1 {
+.frame-3 .overlap-group1 {
   height: 330px;
   margin-right: 3.0px;
   margin-top: 16px;
@@ -172,33 +157,21 @@
   width: 475px;
 }
 
-.frame-2 .line-12 {
-  height: 167px;
-  left: 355px;
-  position: absolute;
-  top: 36px;
-  width: 1px;
-}
-
-.frame-2 .text-20 {
+.frame-3 .text-10 {
   left: 10px;
   line-height: 42px;
   position: absolute;
   top: 34px;
 }
 
-.frame-2 .text-21 {
+.frame-3 .text-11 {
   left: 247px;
   line-height: 42px;
   position: absolute;
   top: 34px;
 }
 
-.frame-2 .span1-1 {
-  letter-spacing: -0.34px;
-}
-
-.frame-2 .text-22 {
+.frame-3 .text-12 {
   left: 367px;
   letter-spacing: 0;
   line-height: 42px;

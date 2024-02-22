@@ -45,7 +45,7 @@
   width: 20px;
 }
 
-.frame-2 .text-23 {
+.frame-2 .text-4 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 9px;
@@ -63,7 +63,7 @@
   width: 20px;
 }
 
-.frame-2 .text-24 {
+.frame-2 .text-5 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 9px;
@@ -82,7 +82,7 @@
   width: 20px;
 }
 
-.frame-2 .text-25 {
+.frame-2 .text-6 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 9px;
@@ -90,7 +90,7 @@
   white-space: nowrap;
 }
 
-.frame-2 .text-26 {
+.frame-2 .text-7 {
   letter-spacing: 0;
   line-height: normal;
   min-height: 15px;
@@ -98,7 +98,7 @@
   white-space: nowrap;
 }
 
-.frame-2 .text-27 {
+.frame-2 .text-8 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 62px;
@@ -107,28 +107,12 @@
   white-space: nowrap;
 }
 
-.frame-2 .text-28 {
+.frame-2 .text-9 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 81px;
   min-height: 15px;
   white-space: nowrap;
-}
-
-.frame-2 .line-1 {
-  height: 1px;
-  margin-right: 1.0px;
-  margin-top: 16px;
-  object-fit: cover;
-  width: 477px;
-}
-
-.frame-2 .line-2 {
-  height: 1px;
-  margin-right: 1.0px;
-  margin-top: 32px;
-  object-fit: cover;
-  width: 477px;
 }
 
 .frame-2 .group-5 {
@@ -172,33 +156,21 @@
   width: 475px;
 }
 
-.frame-2 .line-12 {
-  height: 167px;
-  left: 355px;
-  position: absolute;
-  top: 36px;
-  width: 1px;
-}
-
-.frame-2 .text-20 {
+.frame-2 .text-1 {
   left: 10px;
   line-height: 42px;
   position: absolute;
   top: 34px;
 }
 
-.frame-2 .text-21 {
+.frame-2 .text-2 {
   left: 247px;
   line-height: 42px;
   position: absolute;
   top: 34px;
 }
 
-.frame-2 .span1-1 {
-  letter-spacing: -0.34px;
-}
-
-.frame-2 .text-22 {
+.frame-2 .text-3 {
   left: 367px;
   letter-spacing: 0;
   line-height: 42px;

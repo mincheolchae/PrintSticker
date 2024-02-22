@@ -47,7 +47,7 @@
   width: 20px;
 }
 
-.frame-3 .text-13 {
+.frame-3 .text-32 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 9px;
@@ -66,7 +66,7 @@
   width: 20px;
 }
 
-.frame-3 .text-14 {
+.frame-3 .text-33 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 9px;
@@ -84,7 +84,7 @@
   width: 20px;
 }
 
-.frame-3 .text-15 {
+.frame-3 .text-34 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 9px;
@@ -92,7 +92,7 @@
   white-space: nowrap;
 }
 
-.frame-3 .text-16 {
+.frame-3 .text-35 {
   letter-spacing: 0;
   line-height: normal;
   min-height: 15px;
@@ -100,7 +100,7 @@
   white-space: nowrap;
 }
 
-.frame-3 .text-17 {
+.frame-3 .text-36 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 62px;
@@ -109,12 +109,28 @@
   white-space: nowrap;
 }
 
-.frame-3 .text-18 {
+.frame-3 .text-37 {
   letter-spacing: 0;
   line-height: normal;
   margin-left: 81px;
   min-height: 15px;
   white-space: nowrap;
+}
+
+.frame-3 .line-1 {
+  height: 1px;
+  margin-right: 1.0px;
+  margin-top: 16px;
+  object-fit: cover;
+  width: 477px;
+}
+
+.frame-3 .line-2 {
+  height: 1px;
+  margin-right: 1.0px;
+  margin-top: 32px;
+  object-fit: cover;
+  width: 477px;
 }
 
 .frame-3 .group-5-1 {
@@ -157,21 +173,33 @@
   width: 475px;
 }
 
-.frame-3 .text-10 {
+.frame-3 .line-12 {
+  height: 167px;
+  left: 355px;
+  position: absolute;
+  top: 36px;
+  width: 1px;
+}
+
+.frame-3 .text-29 {
   left: 10px;
   line-height: 42px;
   position: absolute;
   top: 34px;
 }
 
-.frame-3 .text-11 {
+.frame-3 .text-30 {
   left: 247px;
   line-height: 42px;
   position: absolute;
   top: 34px;
 }
 
-.frame-3 .text-12 {
+.frame-3 .span1-1 {
+  letter-spacing: -0.34px;
+}
+
+.frame-3 .text-31 {
   left: 367px;
   letter-spacing: 0;
   line-height: 42px;
