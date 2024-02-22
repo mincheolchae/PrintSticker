@@ -31,36 +31,7 @@ public class PrintController {
 
     @PostMapping("/label")
     public String readExcel(@RequestParam("file") MultipartFile file, Model model) throws TikaException, IOException { // 2
-//        List<ExcelData> dataList = new ArrayList<>();
-//
-//        try (InputStream is = file.getInputStream();) {
-//
-//            Tika tika = new Tika();
-//            String mimeType = tika.detect(is);
-//            if (isAllowedMIMEType(mimeType)) {
-//                Workbook workbook = new XSSFWorkbook(file.getInputStream());
-//
-//                Sheet worksheet = workbook.getSheetAt(0);
-//
-//                String atchFileId = null;
-//
-//                for (int i = 1; i < worksheet.getPhysicalNumberOfRows(); i++) { // 1번째 행부터 끝까지
-//                    Row row = worksheet.getRow(i);
-//
-//                    ExcelData data = new ExcelData();
-//                    data.setNum((int) row.getCell(0).getNumericCellValue());
-//                    data.setName(row.getCell(1).getStringCellValue());
-//
-//                    dataList.add(data);
-//                }
-//
-//                model.addAttribute("list", dataList);
-//            } else {
-//                throw new IOException();
-//            }
-//        } catch (Exception e) {
-//            throw new TikaException("ERROR");
-//        }
+
         List<ExcelData> dataList = new ArrayList<>();
 
         String extension = FilenameUtils.getExtension(file.getOriginalFilename()); // 3
