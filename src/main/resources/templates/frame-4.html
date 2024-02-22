@@ -84,59 +84,59 @@
       </div>
     </div>
   </div>
-
+  <div id="no-print">
     <br>
     <br>
-
-
+    * 프린트 설정 : 크롬 브라우저, A4, 여백 없음, 배율 162, 배경그래픽 체크
     <div>
       <table class="table table-hover">
         <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">주문번호</th>
-          <th scope="col">주문상태</th>
-          <th scope="col">구독상태</th>
-          <th scope="col">견주</th>
-          <th scope="col">수령자</th>
-          <th scope="col">견종</th>
-          <th scope="col">견명</th>
-          <th scope="col">팩수</th>
-          <th scope="col">SP</th>
-          <th scope="col">TB</th>
-          <th scope="col">DL</th>
-          <th scope="col">LB</th>
-          <th scope="col">배송주기</th>
-          <th scope="col">견 성별</th>
-          <th scope="col">견 출생</th>
-          <th scope="col">견 무게</th>
-          <th scope="col">견 사이즈</th>
-          <th scope="col">중성화</th>
-          <th scope="col">활동량</th>
-          <th scope="col">산책량(1주당)</th>
-          <th scope="col">산책량(1회당)</th>
-          <th scope="col">견 상태</th>
-          <th scope="col">간식량</th>
-          <th scope="col">못먹는 음식</th>
-          <th scope="col">못먹는 음식 기타</th>
-          <th scope="col">기타 질병</th>
+          <th scope="col" style="background-color: #bcaaa4">#</th>
+          <th scope="col" style="background-color: #bcaaa4">주문번호</th>
+          <th scope="col" style="background-color: #bcaaa4">주문상태</th>
+          <th scope="col" style="background-color: #bcaaa4">구독상태</th>
+          <th scope="col" style="background-color: #bcaaa4">견주</th>
+          <th scope="col" style="background-color: #bcaaa4">수령자</th>
+          <th scope="col" style="background-color: #bcaaa4">견종</th>
+          <th scope="col" style="background-color: #bcaaa4">견명</th>
+          <th scope="col" style="background-color: #bcaaa4">팩수</th>
+          <th scope="col" style="background-color: #bcaaa4">SP</th>
+          <th scope="col" style="background-color: #bcaaa4">TB</th>
+          <th scope="col" style="background-color: #bcaaa4">DL</th>
+          <th scope="col" style="background-color: #bcaaa4">LB</th>
+          <th scope="col" style="background-color: #bcaaa4">배송주기</th>
+          <th scope="col" style="background-color: #bcaaa4">견 성별</th>
+          <th scope="col" style="background-color: #bcaaa4">견 출생</th>
+          <th scope="col" style="background-color: #bcaaa4">견 무게</th>
+          <th scope="col" style="background-color: #bcaaa4">견 사이즈</th>
+          <th scope="col" style="background-color: #bcaaa4">중성화</th>
+          <th scope="col" style="background-color: #bcaaa4">활동량</th>
+          <th scope="col" style="background-color: #bcaaa4">산책량(1주당)</th>
+          <th scope="col" style="background-color: #bcaaa4">산책량(1회당)</th>
+          <th scope="col" style="background-color: #bcaaa4">견 상태</th>
+          <th scope="col" style="background-color: #bcaaa4">간식량</th>
+          <th scope="col" style="background-color: #bcaaa4">못먹는 음식</th>
+          <th scope="col" style="background-color: #bcaaa4">못먹는 음식 기타</th>
+          <th scope="col" style="background-color: #bcaaa4">기타 질병</th>
+          <th scope="col" style="background-color: #bcaaa4">프린트</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="data : ${datas}" class="full-data">
-          <td th:text="${data.index}"></td>
+        <tr th:each="data : ${datas}" class="full-data" onclick="contentModify(this)">
+          <td th:text="${data.index}" style="background-color: #84ffff"></td>
           <td th:text="${data.merchantUid}"></td>
           <td th:text="${data.orderStatus}"></td>
           <td th:text="${data.subscribeStatus}"></td>
-          <td th:text="${data.memberName}"></td>
+          <td th:text="${data.memberName}" style="background-color: #64ffda"></td>
           <td th:text="${data.deliveryName}"></td>
           <td th:text="${data.dogType}"></td>
-          <td th:text="${data.dogName}"></td>
+          <td th:text="${data.dogName}" style="background-color: #ffd740"></td>
           <td th:text="${data.numOfPacks}"></td>
-          <td th:text="${data.starterPremium}"></td>
-          <td th:text="${data.turkeyAndBeef}"></td>
-          <td th:text="${data.duckAndLamb}"></td>
-          <td th:text="${data.lambAndBeef}"></td>
+          <td th:text="${data.starterPremium}" style="background-color: #f8bbd0"></td>
+          <td th:text="${data.turkeyAndBeef}" style="background-color: #f8bbd0"></td>
+          <td th:text="${data.duckAndLamb}" style="background-color: #f8bbd0"></td>
+          <td th:text="${data.lambAndBeef}" style="background-color: #f8bbd0"></td>
           <td th:text="${data.deliveryInterval}"></td>
           <td th:text="${data.dogGender}"></td>
           <td th:text="${data.dogBirth}"></td>
@@ -151,432 +151,444 @@
           <td th:text="${data.dogInedibleFood}"></td>
           <td th:text="${data.dogInedibleFoodEtc}"></td>
           <td th:text="${data.dogCaution}"></td>
+          <td><button class="print-button" onclick="printer(this)">Print</button></td>
         </tr>
         </tbody>
       </table>
     </div>
+  </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
+      function contentModify(e) {
+        let children = e.children;
+        let dogType = children[6].innerHTML;  //견종
+        let dogName = children[7].innerHTML;  //견명
+        let numOfPacks = children[8].innerHTML;  //팩수
+        let sp = children[9].innerHTML;  //SP
+        let tb = children[10].innerHTML;  //TB
+        let dl = children[11].innerHTML;  //DL
+        let lb = children[12].innerHTML;  //LB
+        let deliveryInterval = children[13].innerHTML;  //배송주기
+        let dogGender = children[14].innerHTML;  //견 성별
+        let dogBirth = children[15].innerHTML;  //견 출생
+        let dogWeight = children[16].innerHTML;  //견 무게
+        let dogSize = children[17].innerHTML;  //견 무게
+        let dogNeutralization = children[18].innerHTML;  //중성화
+        let dogActivityLevel = children[19].innerHTML;  //활동량
+        let dogWalkingCountPerWeek = children[20].innerHTML;  //산책량(1주당)
+        let dogWalkingTimePerOneTime = children[21].innerHTML;  //산책량(1회당)
+        let dogStatus = children[22].innerHTML;  //견 현재상태
+        let dogSnackCountLevel = children[23].innerHTML;  //간식량
+        let dogInedibleFood = children[24].innerHTML;  //못먹는 음식
+        let dogInedibleFoodEtc = children[25].innerHTML;  //못먹는 음식 기타
+        let dogCaution = children[26].innerHTML;  //기타 질병
 
-      let prtContent; // 프린트 하고 싶은 영역
-      let initBody;  // body 내용 원본
-
-      const fullData = document.querySelectorAll('.full-data');
-      for (const fullDatum of fullData) {
-        fullDatum.addEventListener('click', function() {
-          let children = fullDatum.children;
-          let dogType = children[6].innerHTML;  //견종
-          let dogName = children[7].innerHTML;  //견명
-          let numOfPacks = children[8].innerHTML;  //팩수
-          let sp = children[9].innerHTML;  //SP
-          let tb = children[10].innerHTML;  //TB
-          let dl = children[11].innerHTML;  //DL
-          let lb = children[12].innerHTML;  //LB
-          let deliveryInterval = children[13].innerHTML;  //배송주기
-          let dogGender = children[14].innerHTML;  //견 성별
-          let dogBirth = children[15].innerHTML;  //견 출생
-          let dogWeight = children[16].innerHTML;  //견 무게
-          let dogSize = children[17].innerHTML;  //견 무게
-          let dogNeutralization = children[18].innerHTML;  //중성화
-          let dogActivityLevel = children[19].innerHTML;  //활동량
-          let dogWalkingCountPerWeek = children[20].innerHTML;  //산책량(1주당)
-          let dogWalkingTimePerOneTime = children[21].innerHTML;  //산책량(1회당)
-          let dogStatus = children[22].innerHTML;  //견 현재상태
-          let dogSnackCountLevel = children[23].innerHTML;  //간식량
-          let dogInedibleFood = children[24].innerHTML;  //못먹는 음식
-          let dogInedibleFoodEtc = children[25].innerHTML;  //못먹는 음식 기타
-          let dogCaution = children[26].innerHTML;  //기타 질병
-
-          //plan
-          let plan;
-          if (parseInt(numOfPacks) >= 20 && parseInt(numOfPacks) < 28) {
-            plan = 'topping';
-          } else if (parseInt(numOfPacks) >= 28 && parseInt(deliveryInterval) === 14) {
-            plan = 'full';
-          } else if (parseInt(numOfPacks) >= 28 && parseInt(deliveryInterval) === 28) {
-            plan = 'half';
-          } else {
-            plan = 'wrong';
-          }
-
-          if (plan === 'topping') {
-            document.querySelector('.rectangle-4').style.backgroundColor = 'var(--white)';
-            document.querySelector('.rectangle-4').style.border = '1px solid';
-            document.querySelector('.rectangle-4').style.borderColor = 'var(--black)';
-            document.querySelector('.rectangle-5').style.backgroundColor = 'var(--white)';
-            document.querySelector('.rectangle-6').style.backgroundColor = 'var(--black)';
-          } else if (plan === 'full') {
-            document.querySelector('.rectangle-4').style.backgroundColor = 'var(--black)';
-            document.querySelector('.rectangle-5').style.backgroundColor = 'var(--white)';
-            document.querySelector('.rectangle-6').style.backgroundColor = 'var(--white)';
-          } else if (plan === 'half') {
-            document.querySelector('.rectangle-4').style.backgroundColor = 'var(--white)';
-            document.querySelector('.rectangle-4').style.border = '1px solid';
-            document.querySelector('.rectangle-4').style.borderColor = 'var(--black)';
-            document.querySelector('.rectangle-5').style.backgroundColor = 'var(--black)';
-            document.querySelector('.rectangle-6').style.backgroundColor = 'var(--white)';
-          } else {
-            alert('플랜을 구분할 수 없습니다.')
-          }
-
-          //견명
-          document.querySelector('.dogName').innerHTML = dogName;
-
-          //선택 레시피
-          let spWeight = parseFloat(sp);
-          let tbWeight = parseFloat(tb);
-          let dlWeight = parseFloat(dl);
-          let lbWeight = parseFloat(lb);
-          let cnt = 0;
-          let arr = [spWeight, tbWeight, dlWeight, lbWeight];
-          let idx = [];
-          let map = new Map();
-          for (let i = 0; i < arr.length; i++) {
-            if (arr[i] !== 0) {
-              cnt++;
-              idx.push(i);
-              map.set(i, arr[i]);
-            }
-          }
-
-          let recipeNames = [];
-          for (let i=0; i<idx.length; i++) {
-            if (idx[i] === 0) {
-              recipeNames.push('SP');
-            } else if (idx[i] === 1) {
-              recipeNames.push('TB');
-            } else if (idx[i] === 2) {
-              recipeNames.push('DL');
-            } else if (idx[i] === 3) {
-              recipeNames.push('LB');
-            }
-          }
-
-          let selectedRecipe;
-          if (plan === 'full' && cnt === 2) {
-            document.querySelector('.recipe-2').innerHTML = recipeNames[0];
-            document.querySelector('.recipe-3').innerHTML = recipeNames[1];
-            document.querySelector('.pack-2').innerHTML = '14';
-            document.querySelector('.pack-3').innerHTML = '14';
-
-            selectedRecipe = prompt('[풀플랜] 레시피 두 가지 중 하나 선택: ' + recipeNames[0] + '/' + recipeNames[1]).toLowerCase();
-            if (selectedRecipe === 'sp') {
-              if (spWeight === 0) {
-                alert("잘못 선택했습니다.");
-              }
-              for (let i = 0; i < recipeNames.length; i++) {
-                if (recipeNames[i].toLowerCase() === selectedRecipe) {
-                  if (i === 0) {
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-8').style.border = '1px solid';
-                    document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
-                  } else {
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-7').style.border = '1px solid';
-                    document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
-                  }
-                }
-              }
-            } else if (selectedRecipe === 'tb') {
-              if (tbWeight === 0) {
-                alert("잘못 선택했습니다.")
-              }
-              for (let i = 0; i < recipeNames.length; i++) {
-                if (recipeNames[i].toLowerCase() === selectedRecipe) {
-                  if (i === 0) {
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-8').style.border = '1px solid';
-                    document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
-                  } else {
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-7').style.border = '1px solid';
-                    document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
-                  }
-                }
-              }
-            } else if (selectedRecipe === 'dl') {
-              if (dlWeight === 0) {
-                alert("잘못 선택했습니다.")
-              }
-              for (let i = 0; i < recipeNames.length; i++) {
-                if (recipeNames[i].toLowerCase() === selectedRecipe) {
-                  if (i === 0) {
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-8').style.border = '1px solid';
-                    document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
-                  } else {
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-7').style.border = '1px solid';
-                    document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
-                  }
-                }
-              }
-            } else if (selectedRecipe === 'lb') {
-              if (lbWeight === 0) {
-                alert("잘못 선택했습니다.")
-              }
-              for (let i = 0; i < recipeNames.length; i++) {
-                if (recipeNames[i].toLowerCase() === selectedRecipe) {
-                  if (i === 0) {
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-8').style.border = '1px solid';
-                    document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
-                  } else {
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-7').style.border = '1px solid';
-                    document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
-                  }
-                }
-              }
-            } else {
-              alert("잘못 입력하셨습니다.")
-            }
-
-            document.querySelector('.sp-28').style.left = '-85px';
-            document.querySelector('.rectangle-7').style.left = '50px';
-            document.querySelector('.rectangle-8').style.display = 'inline';
-            document.querySelector('.selected-1').style.display = 'none';
-            document.querySelector('.selected-2').style.display = 'inline';
-          } else {
-            document.querySelector('.recipe').innerHTML = recipeNames[0];
-            document.querySelector('.sp-28').style.left = '0';
-            document.querySelector('.rectangle-7').style.left = '134px';
-            document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
-            document.querySelector('.rectangle-8').style.display = 'none';
-            document.querySelector('.selected-1').style.display = 'inline';
-            document.querySelector('.selected-2').style.display = 'none';
-          }
-
-
-          //한끼 급여량
-          let recipeWeight;
-          if (plan !== 'full' || (plan === 'full' && cnt === 1)) {
-            if (spWeight !== 0) {
-              recipeWeight = spWeight;
-            } else if (tbWeight !== 0) {
-              recipeWeight = tbWeight;
-            } else if (dlWeight !== 0) {
-              recipeWeight = dlWeight;
-            } else if (lbWeight !== 0) {
-              recipeWeight = lbWeight;
-            }
-          } else {  // 2 recipe full plan
-            if (selectedRecipe === 'sp') {
-              recipeWeight = spWeight;
-            } else if (selectedRecipe === 'tb') {
-              recipeWeight = tbWeight;
-            } else if (selectedRecipe === 'dl') {
-              recipeWeight = dlWeight;
-            } else if (selectedRecipe === 'lb') {
-              recipeWeight = lbWeight;
-            }
-          }
-          document.querySelector('.recipeWeight').innerHTML = recipeWeight;
-
-          document.querySelector('.x515g').style.fontSize = '90px';  //초기화
-          document.querySelector('.x515g').style.marginBottom = '0';
-          let totalWidth = document.querySelector('.dogName').offsetWidth + document.querySelector('.recipeWeight').offsetWidth + document.querySelector('.space').offsetWidth + document.querySelector('.g').offsetWidth;
-
-          if (totalWidth >= 420) {
-            document.querySelector('.x515g').style.fontSize = '74px';
-            if (dogName.length >= 4) {
-              document.querySelector('.x515g').style.fontSize = '61px';
-            }
-          } else {
-            document.querySelector('.x515g').style.fontSize = '90px';
-          }
-
-
-
-
-
-          //팩수
-          document.querySelector('.pack').innerHTML = numOfPacks;
-
-
-          //출생년월
-          let year = dogBirth.substring(0, 4);
-          let month = dogBirth.substring(4, 6);
-          document.querySelector('.dogBirth').innerHTML = year + '.' + month + '.';
-
-          //견종
-          document.querySelector('.text-4').style.left = '311px';  //초기화
-          document.querySelector('.dogType').style.fontSize = '22px';  //초기화
-          document.querySelector('.dogType').style.letterSpacing = '0';  //초기화
-          document.querySelector('.dogType').innerHTML = dogType;
-          let typeWidth = document.querySelector('.dogType').offsetWidth;
-          if (typeWidth > 150 && typeWidth <= 220) {
-            document.querySelector('.text-4').style.left = '308px';
-            document.querySelector('.dogType').style.fontSize = '17px';
-            document.querySelector('.dogType').style.letterSpacing = '-1px';
-          } else if (typeWidth > 220 && typeWidth <= 287) {
-            document.querySelector('.text-4').style.left = '305px';
-            document.querySelector('.dogType').style.fontSize = '14px';
-            document.querySelector('.dogType').style.letterSpacing = '-1px';
-          } else if (typeWidth > 287 && typeWidth <= 330) {
-            document.querySelector('.text-4').style.left = '304px';
-            document.querySelector('.dogType').style.fontSize = '13px';
-            document.querySelector('.dogType').style.letterSpacing = '-1px';
-          } else if (typeWidth > 330) {
-            document.querySelector('.text-4').style.left = '304px';
-            document.querySelector('.dogType').style.fontSize = '12px';
-            document.querySelector('.dogType').style.letterSpacing = '-1px';
-          } else {
-            document.querySelector('.text-4').style.left = '311px';
-            document.querySelector('.dogType').style.fontSize = '22px';
-            document.querySelector('.dogType').style.letterSpacing = '0';
-          }
-
-
-          //성별
-          document.querySelector('.dogGender').innerHTML = dogGender === 'MALE' ? '수컷' : '암컷';
-
-          //중성화 여부
-          document.querySelector('.dogNeutralization').innerHTML = dogNeutralization === 'YES' ? '완료' : '미완료';
-
-          //몸무게
-          document.querySelector('.dogWeight').innerHTML = dogWeight;
-          if (dogSize === 'LARGE') {
-            dogSize = '대';
-          } else if (dogSize === 'MIDDLE') {
-            dogSize = '중';
-          } else {
-            dogSize = '소';
-          }
-
-          //사이즈
-          document.querySelector('.dogSize').innerHTML = dogSize;
-
-          //현재 상태
-          if (dogStatus === 'LACTATING') {
-            dogStatus = '수유중';
-          } else if (dogStatus === 'NEED_DIET') {
-            dogStatus = '다이어트필요';
-            document.querySelector('.dogStatus').style.letterSpacing = '-2.5px';
-          } else if (dogStatus === 'OBESITY') {
-            dogStatus = '비만';
-          } else if (dogStatus === 'PREGNANT') {
-            dogStatus = '임신중';
-          } else {
-            dogStatus = '건강함';
-          }
-          document.querySelector('.dogStatus').innerHTML = dogStatus;
-
-          //활동량
-          console.log(dogActivityLevel)
-          if (dogActivityLevel === 'VERY_LITTLE') {
-            dogActivityLevel = '매우 적음';
-          } else if (dogActivityLevel === 'LITTLE') {
-            dogActivityLevel = '다소 적음';
-          } else if (dogActivityLevel === 'MUCH') {
-            dogActivityLevel = '많음';
-          } else if (dogActivityLevel === 'VERY_MUCH') {
-            dogActivityLevel = '매우 많음';
-          } else {
-            dogActivityLevel = '보통';
-          }
-          console.log(dogActivityLevel)
-          document.querySelector('.dogActivityLevel').innerHTML = dogActivityLevel;
-
-          //간식량
-          if (dogSnackCountLevel === 'LITTLE') {
-            dogSnackCountLevel = '적음';
-          } else if (dogSnackCountLevel === 'MUCH') {
-            dogSnackCountLevel = '많음';
-          } else {
-            dogSnackCountLevel = '보통';
-          }
-          document.querySelector('.dogSnackCountLevel').innerHTML = dogSnackCountLevel;
-
-          //산책량(1주당)
-          document.querySelector('.dogWalkingCountPerWeek').innerHTML = dogWalkingCountPerWeek;
-
-          //산책량(1회당)
-          let walkingTime = dogWalkingTimePerOneTime.split('.');
-          let hour = walkingTime[0] === '0' ? '' : walkingTime[0] + '시간 ';
-          let minute = walkingTime[1] === '5' ? '30분' : '';
-          document.querySelector('.dogWalkingTimePerOneTime').innerHTML = hour + minute;
-
-          //식이알러지
-          let foodAllergy;
-          if (dogInedibleFood === 'NONE') {
-            foodAllergy = '없음';
-          } else if (dogInedibleFood === 'ETC') {
-            foodAllergy = dogInedibleFoodEtc;
-          } else {
-            foodAllergy = dogInedibleFood;
-          }
-          document.querySelector('.dogInedibleFood').innerHTML = foodAllergy;
-          document.querySelector('.span1-1').style.fontSize = '22px'; //초기화
-          document.querySelector('.span1-1').style.lineHeight = '45px'; //초기화
-          let offsetHeight = document.querySelector('.dogInedibleFood').offsetHeight;
-          if (offsetHeight > 22 && offsetHeight < 67) {
-            document.querySelector('.span1-1').style.lineHeight = '16px';
-            document.querySelector('.span1-1').style.fontSize = '18px';
-          } else if (offsetHeight >= 67 && offsetHeight < 112) {
-            document.querySelector('.span1-1').style.lineHeight = '16px';
-            document.querySelector('.span1-1').style.fontSize = '17px';
-          } else if (offsetHeight >= 112 && offsetHeight < 157) {
-            document.querySelector('.span1-1').style.lineHeight = '16px';
-            document.querySelector('.span1-1').style.fontSize = '12px';
-          } else if (offsetHeight >= 157) {
-            document.querySelector('.span1-1').style.lineHeight = '16px';
-            document.querySelector('.span1-1').style.fontSize = '10px';
-          } else {
-            document.querySelector('.span1-1').style.lineHeight = '45px';
-            document.querySelector('.span1-1').style.fontSize = '22px';
-          }
-
-          //기타 질병
-          document.querySelector('.dogCaution').innerHTML = dogCaution === 'NONE' ? '없음' : dogCaution;
-          document.querySelector('.span3').style.fontSize = '22px'; //초기화
-          document.querySelector('.span3').style.lineHeight = '38px'; //초기화
-          document.querySelector('.x202106-32kg').style.lineHeight = '22px'; //초기화
-          let offsetHeight2 = document.querySelector('.dogCaution').offsetHeight;
-          if (offsetHeight2 > 22 && offsetHeight2 < 60) {
-            document.querySelector('.span3').style.lineHeight = '16px';
-            document.querySelector('.span3').style.fontSize = '18px';
-          } else if (offsetHeight2 >= 60 && offsetHeight2 < 98) {
-            document.querySelector('.span3').style.lineHeight = '16px';
-            document.querySelector('.span3').style.fontSize = '17px';
-            document.querySelector('.x202106-32kg').style.lineHeight = '21px';
-          } else if (offsetHeight2 >= 98) {
-            document.querySelector('.span3').style.lineHeight = '16px';
-            document.querySelector('.span3').style.fontSize = '14px';
-            document.querySelector('.x202106-32kg').style.lineHeight = '21px';
-          } else {
-            document.querySelector('.span3').style.lineHeight= '38px';
-            document.querySelector('.span3').style.fontSize= '22px';
-          }
-
-          prtContent = document.getElementById('print');
-          window.onbeforeprint = beforePrint;
-          window.onafterprint = afterPrint;
-          window.print();
-
-        })
-
-        // 웹페이지 body 내용을 프린트하고 싶은 내용으로 교체
-        function beforePrint(){
-          initBody = document.body.innerHTML;
-          document.body.innerHTML = prtContent.innerHTML;
+        //plan
+        let plan;
+        if (parseInt(numOfPacks) >= 20 && parseInt(numOfPacks) < 28) {
+          plan = 'topping';
+        } else if (parseInt(numOfPacks) >= 28 && parseInt(deliveryInterval) === 14) {
+          plan = 'full';
+        } else if (parseInt(numOfPacks) >= 28 && parseInt(deliveryInterval) === 28) {
+          plan = 'half';
+        } else {
+          plan = 'wrong';
         }
 
-        // 프린트 후, 웹페이지 body 복구
-        function afterPrint(){
-          document.body.innerHTML = initBody;
+        if (plan === 'topping') {
+          document.querySelector('.rectangle-4').style.backgroundColor = 'var(--white)';
+          document.querySelector('.rectangle-4').style.border = '1px solid';
+          document.querySelector('.rectangle-4').style.borderColor = 'var(--black)';
+          document.querySelector('.rectangle-5').style.backgroundColor = 'var(--white)';
+          document.querySelector('.rectangle-6').style.backgroundColor = 'var(--black)';
+        } else if (plan === 'full') {
+          document.querySelector('.rectangle-4').style.backgroundColor = 'var(--black)';
+          document.querySelector('.rectangle-5').style.backgroundColor = 'var(--white)';
+          document.querySelector('.rectangle-6').style.backgroundColor = 'var(--white)';
+        } else if (plan === 'half') {
+          document.querySelector('.rectangle-4').style.backgroundColor = 'var(--white)';
+          document.querySelector('.rectangle-4').style.border = '1px solid';
+          document.querySelector('.rectangle-4').style.borderColor = 'var(--black)';
+          document.querySelector('.rectangle-5').style.backgroundColor = 'var(--black)';
+          document.querySelector('.rectangle-6').style.backgroundColor = 'var(--white)';
+        } else {
+          alert('플랜을 구분할 수 없습니다.')
+        }
+
+        //견명
+        document.querySelector('.dogName').innerHTML = dogName;
+
+        //선택 레시피
+        let spWeight = parseFloat(sp);
+        let tbWeight = parseFloat(tb);
+        let dlWeight = parseFloat(dl);
+        let lbWeight = parseFloat(lb);
+        let cnt = 0;
+        let arr = [spWeight, tbWeight, dlWeight, lbWeight];
+        let idx = [];
+        let map = new Map();
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] !== 0) {
+            cnt++;
+            idx.push(i);
+            map.set(i, arr[i]);
+          }
+        }
+
+        let recipeNames = [];
+        for (let i=0; i<idx.length; i++) {
+          if (idx[i] === 0) {
+            recipeNames.push('SP');
+          } else if (idx[i] === 1) {
+            recipeNames.push('TB');
+          } else if (idx[i] === 2) {
+            recipeNames.push('DL');
+          } else if (idx[i] === 3) {
+            recipeNames.push('LB');
+          }
+        }
+
+        let selectedRecipe;
+        if (plan === 'full' && cnt === 2) {
+          document.querySelector('.recipe-2').innerHTML = recipeNames[0];
+          document.querySelector('.recipe-3').innerHTML = recipeNames[1];
+          document.querySelector('.pack-2').innerHTML = '14';
+          document.querySelector('.pack-3').innerHTML = '14';
+
+          selectedRecipe = prompt('[풀플랜] 레시피 두 가지 중 하나 선택: ' + recipeNames[0] + '/' + recipeNames[1]).toLowerCase();
+          if (selectedRecipe === 'sp') {
+            if (spWeight === 0) {
+              alert("잘못 선택했습니다.");
+            }
+            for (let i = 0; i < recipeNames.length; i++) {
+              if (recipeNames[i].toLowerCase() === selectedRecipe) {
+                if (i === 0) {
+                  document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
+                  document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
+                  document.querySelector('.rectangle-8').style.border = '1px solid';
+                  document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
+                } else {
+                  document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
+                  document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
+                  document.querySelector('.rectangle-7').style.border = '1px solid';
+                  document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
+                }
+              }
+            }
+          } else if (selectedRecipe === 'tb') {
+            if (tbWeight === 0) {
+              alert("잘못 선택했습니다.")
+            }
+            for (let i = 0; i < recipeNames.length; i++) {
+              if (recipeNames[i].toLowerCase() === selectedRecipe) {
+                if (i === 0) {
+                  document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
+                  document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
+                  document.querySelector('.rectangle-8').style.border = '1px solid';
+                  document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
+                } else {
+                  document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
+                  document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
+                  document.querySelector('.rectangle-7').style.border = '1px solid';
+                  document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
+                }
+              }
+            }
+          } else if (selectedRecipe === 'dl') {
+            if (dlWeight === 0) {
+              alert("잘못 선택했습니다.")
+            }
+            for (let i = 0; i < recipeNames.length; i++) {
+              if (recipeNames[i].toLowerCase() === selectedRecipe) {
+                if (i === 0) {
+                  document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
+                  document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
+                  document.querySelector('.rectangle-8').style.border = '1px solid';
+                  document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
+                } else {
+                  document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
+                  document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
+                  document.querySelector('.rectangle-7').style.border = '1px solid';
+                  document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
+                }
+              }
+            }
+          } else if (selectedRecipe === 'lb') {
+            if (lbWeight === 0) {
+              alert("잘못 선택했습니다.")
+            }
+            for (let i = 0; i < recipeNames.length; i++) {
+              if (recipeNames[i].toLowerCase() === selectedRecipe) {
+                if (i === 0) {
+                  document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
+                  document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
+                  document.querySelector('.rectangle-8').style.border = '1px solid';
+                  document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
+                } else {
+                  document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
+                  document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
+                  document.querySelector('.rectangle-7').style.border = '1px solid';
+                  document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
+                }
+              }
+            }
+          } else {
+            alert("잘못 입력하셨습니다.")
+          }
+
+          document.querySelector('.sp-28').style.left = '-85px';
+          document.querySelector('.rectangle-7').style.left = '50px';
+          document.querySelector('.rectangle-8').style.display = 'inline';
+          document.querySelector('.selected-1').style.display = 'none';
+          document.querySelector('.selected-2').style.display = 'inline';
+        } else {
+          document.querySelector('.recipe').innerHTML = recipeNames[0];
+          document.querySelector('.sp-28').style.left = '0';
+          document.querySelector('.rectangle-7').style.left = '134px';
+          document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
+          document.querySelector('.rectangle-8').style.display = 'none';
+          document.querySelector('.selected-1').style.display = 'inline';
+          document.querySelector('.selected-2').style.display = 'none';
+        }
+
+
+        //한끼 급여량
+        let recipeWeight;
+        if (plan !== 'full' || (plan === 'full' && cnt === 1)) {
+          if (spWeight !== 0) {
+            recipeWeight = spWeight;
+          } else if (tbWeight !== 0) {
+            recipeWeight = tbWeight;
+          } else if (dlWeight !== 0) {
+            recipeWeight = dlWeight;
+          } else if (lbWeight !== 0) {
+            recipeWeight = lbWeight;
+          }
+        } else {  // 2 recipe full plan
+          if (selectedRecipe === 'sp') {
+            recipeWeight = spWeight;
+          } else if (selectedRecipe === 'tb') {
+            recipeWeight = tbWeight;
+          } else if (selectedRecipe === 'dl') {
+            recipeWeight = dlWeight;
+          } else if (selectedRecipe === 'lb') {
+            recipeWeight = lbWeight;
+          }
+        }
+        document.querySelector('.recipeWeight').innerHTML = recipeWeight;
+
+        document.querySelector('.x515g').style.fontSize = '90px';  //초기화
+        document.querySelector('.x515g').style.marginBottom = '0';  //초기화
+        document.querySelector('.x515g').style.lineHeight = 'normal';  //초기화
+        let totalWidth = document.querySelector('.dogName').offsetWidth + document.querySelector('.recipeWeight').offsetWidth + document.querySelector('.space').offsetWidth + document.querySelector('.g').offsetWidth;
+
+        if (totalWidth >= 420) {
+          document.querySelector('.x515g').style.fontSize = '74px';
+          document.querySelector('.x515g').style.lineHeight = '94px';
+          if (dogName.length >= 4) {
+            document.querySelector('.x515g').style.fontSize = '61px';
+          }
+        } else {
+          document.querySelector('.x515g').style.fontSize = '90px';
+        }
+
+
+
+
+
+        //팩수
+        document.querySelector('.pack').innerHTML = numOfPacks;
+
+
+        //출생년월
+        let year = dogBirth.substring(0, 4);
+        let month = dogBirth.substring(4, 6);
+        document.querySelector('.dogBirth').innerHTML = year + '.' + month + '.';
+
+        //견종
+        document.querySelector('.text-4').style.left = '311px';  //초기화
+        document.querySelector('.dogType').style.fontSize = '22px';  //초기화
+        document.querySelector('.dogType').style.letterSpacing = '0';  //초기화
+        document.querySelector('.dogType').innerHTML = dogType;
+        let typeWidth = document.querySelector('.dogType').offsetWidth;
+        if (typeWidth > 150 && typeWidth <= 220) {
+          document.querySelector('.text-4').style.left = '308px';
+          document.querySelector('.dogType').style.fontSize = '17px';
+          document.querySelector('.dogType').style.letterSpacing = '-1px';
+        } else if (typeWidth > 220 && typeWidth <= 287) {
+          document.querySelector('.text-4').style.left = '305px';
+          document.querySelector('.dogType').style.fontSize = '14px';
+          document.querySelector('.dogType').style.letterSpacing = '-1px';
+        } else if (typeWidth > 287 && typeWidth <= 330) {
+          document.querySelector('.text-4').style.left = '304px';
+          document.querySelector('.dogType').style.fontSize = '13px';
+          document.querySelector('.dogType').style.letterSpacing = '-1px';
+        } else if (typeWidth > 330) {
+          document.querySelector('.text-4').style.left = '304px';
+          document.querySelector('.dogType').style.fontSize = '12px';
+          document.querySelector('.dogType').style.letterSpacing = '-1px';
+        } else {
+          document.querySelector('.text-4').style.left = '311px';
+          document.querySelector('.dogType').style.fontSize = '22px';
+          document.querySelector('.dogType').style.letterSpacing = '0';
+        }
+
+
+        //성별
+        document.querySelector('.dogGender').innerHTML = dogGender === 'MALE' ? '수컷' : '암컷';
+
+        //중성화 여부
+        document.querySelector('.dogNeutralization').innerHTML = dogNeutralization === 'YES' ? '완료' : '미완료';
+
+        //몸무게
+        document.querySelector('.dogWeight').innerHTML = dogWeight;
+        if (dogSize === 'LARGE') {
+          dogSize = '대';
+        } else if (dogSize === 'MIDDLE') {
+          dogSize = '중';
+        } else {
+          dogSize = '소';
+        }
+
+        //사이즈
+        document.querySelector('.dogSize').innerHTML = dogSize;
+
+        //현재 상태
+        if (dogStatus === 'LACTATING') {
+          dogStatus = '수유중';
+        } else if (dogStatus === 'NEED_DIET') {
+          dogStatus = '다이어트필요';
+          document.querySelector('.dogStatus').style.letterSpacing = '-1px';
+          document.querySelector('.dogStatus').style.fontSize = '18px';
+        } else if (dogStatus === 'OBESITY') {
+          dogStatus = '비만';
+        } else if (dogStatus === 'PREGNANT') {
+          dogStatus = '임신중';
+        } else {
+          dogStatus = '건강함';
+        }
+        document.querySelector('.dogStatus').innerHTML = dogStatus;
+
+        //활동량
+        if (dogActivityLevel === 'VERY_LITTLE') {
+          dogActivityLevel = '매우 적음';
+        } else if (dogActivityLevel === 'LITTLE') {
+          dogActivityLevel = '다소 적음';
+        } else if (dogActivityLevel === 'MUCH') {
+          dogActivityLevel = '다소 많음';
+        } else if (dogActivityLevel === 'VERY_MUCH') {
+          dogActivityLevel = '매우 많음';
+        } else {
+          dogActivityLevel = '보통';
+        }
+        document.querySelector('.dogActivityLevel').innerHTML = dogActivityLevel;
+
+        //간식량
+        if (dogSnackCountLevel === 'LITTLE') {
+          dogSnackCountLevel = '적음';
+        } else if (dogSnackCountLevel === 'MUCH') {
+          dogSnackCountLevel = '많음';
+        } else {
+          dogSnackCountLevel = '보통';
+        }
+        document.querySelector('.dogSnackCountLevel').innerHTML = dogSnackCountLevel;
+
+        //산책량(1주당)
+        document.querySelector('.dogWalkingCountPerWeek').innerHTML = dogWalkingCountPerWeek;
+
+        //산책량(1회당)
+        let walkingTime = dogWalkingTimePerOneTime.split('.');
+        let hour = walkingTime[0] === '0' ? '' : walkingTime[0] + '시간 ';
+        let minute = walkingTime[1] === '5' ? '30분' : '';
+        document.querySelector('.dogWalkingTimePerOneTime').innerHTML = hour + minute;
+
+        //식이알러지
+        let foodAllergy;
+        if (dogInedibleFood === 'NONE') {
+          foodAllergy = '없음';
+        } else if (dogInedibleFood === 'ETC') {
+          foodAllergy = dogInedibleFoodEtc;
+        } else {
+          foodAllergy = dogInedibleFood;
+        }
+        document.querySelector('.dogInedibleFood').innerHTML = foodAllergy;
+        document.querySelector('.span1-1').style.fontSize = '22px'; //초기화
+        document.querySelector('.span1-1').style.lineHeight = '45px'; //초기화
+        let offsetHeight = document.querySelector('.dogInedibleFood').offsetHeight;
+        if (offsetHeight > 22 && offsetHeight < 67) {
+          document.querySelector('.span1-1').style.lineHeight = '16px';
+          document.querySelector('.span1-1').style.fontSize = '18px';
+        } else if (offsetHeight >= 67 && offsetHeight < 112) {
+          document.querySelector('.span1-1').style.lineHeight = '16px';
+          document.querySelector('.span1-1').style.fontSize = '17px';
+        } else if (offsetHeight >= 112 && offsetHeight < 157) {
+          document.querySelector('.span1-1').style.lineHeight = '16px';
+          document.querySelector('.span1-1').style.fontSize = '12px';
+        } else if (offsetHeight >= 157) {
+          document.querySelector('.span1-1').style.lineHeight = '16px';
+          document.querySelector('.span1-1').style.fontSize = '10px';
+        } else {
+          document.querySelector('.span1-1').style.lineHeight = '45px';
+          document.querySelector('.span1-1').style.fontSize = '22px';
+        }
+
+        //기타 질병
+        document.querySelector('.dogCaution').innerHTML = dogCaution === 'NONE' ? '없음' : dogCaution;
+        document.querySelector('.span3').style.fontSize = '22px'; //초기화
+        document.querySelector('.span3').style.lineHeight = '38px'; //초기화
+        document.querySelector('.x202106-32kg').style.lineHeight = '22px'; //초기화
+        let offsetHeight2 = document.querySelector('.dogCaution').offsetHeight;
+        if (offsetHeight2 > 22 && offsetHeight2 < 60) {
+          document.querySelector('.span3').style.lineHeight = '16px';
+          document.querySelector('.span3').style.fontSize = '18px';
+        } else if (offsetHeight2 >= 60 && offsetHeight2 < 98) {
+          document.querySelector('.span3').style.lineHeight = '16px';
+          document.querySelector('.span3').style.fontSize = '17px';
+          document.querySelector('.x202106-32kg').style.lineHeight = '21px';
+        } else if (offsetHeight2 >= 98) {
+          document.querySelector('.span3').style.lineHeight = '16px';
+          document.querySelector('.span3').style.fontSize = '14px';
+          document.querySelector('.x202106-32kg').style.lineHeight = '21px';
+        } else {
+          document.querySelector('.span3').style.lineHeight= '38px';
+          document.querySelector('.span3').style.fontSize= '22px';
         }
       }
+
+      // const fullData = document.querySelectorAll('.full-data');
+      // for (const fullDatum of fullData) {
+      //   fullDatum.addEventListener('click', contentModify);
+      // }
+
+      let prtContent; // 프린트 하고 싶은 영역
+      // let buttons = document.querySelectorAll('.print-button');
+      // for (const button of buttons) {
+      //   button.addEventListener('click', function () {
+      //     prtContent = document.getElementById('print');
+      //     window.onbeforeprint = beforePrint;
+      //     window.onafterprint = afterPrint;
+      //     window.print();
+      //   })
+      // }
+      function printer(e) {
+        // contentModify(e.parentNode.parentNode)
+        prtContent = document.getElementById('print');
+        window.onbeforeprint = beforePrint;
+        window.onafterprint = afterPrint;
+        window.print();
+      }
+
+      function beforePrint(){
+        document.getElementById('no-print').style.display = 'none';
+      }
+
+      function afterPrint(){
+        document.getElementById('no-print').style.display = 'block';
+      }
+
+
 
     </script>
   </body>
