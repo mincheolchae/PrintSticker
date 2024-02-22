@@ -69,7 +69,7 @@
             <p class="x202106-32kg gmarketsans-medium-black-22px">
               <span class="span0 gmarketsans-medium-black-22px"
                 ><span class="dogBirth">2022.08.</span><br /><span class="dogGender">수컷</span><br /><span class="dogWeight">3</span>kg (<span class="dogSize">소</span>)<br /><span class="dogActivityLevel">적음</span><br />산책 <span class="dogWalkingCountPerWeek">5</span>회 이상, 평균 <span class="dogWalkingTimePerOneTime">30분</span><br /></span
-              ><span class="span1-1"><span class="dogInedibleFood">연어, 오리, 소, 양, 계란흰자, 게, 우유,</span><br/></span
+              ><span class="span1-1"><span class="dogInedibleFood">연어, 오리, 소, 양, 계란흰자, 게, 우유</span><br/></span
               ><span class="span3 gmarketsans-medium-black-22px"><span class="dogCaution">아토피 피부염 치료 중</span></span>
             </p>
             <div class="text-2 gmarketsans-bold-black-22px">
@@ -78,7 +78,7 @@
               ><span class="span gmarketsans-bold-black-22px">현재 상태<br />간식량</span>
             </div>
             <div class="text-3 gmarketsans-medium-black-22px"><span class="dogNeutralization">완료</span><br /><span class="dogStatus">건강함</span><br /><span class="dogSnackCountLevel">적음</span></div>
-            <div class="text-4 gmarketsans-medium-black-22px"><span class="dogType">푸들아아아아아</span></div>
+            <div class="text-4 gmarketsans-medium-black-22px"><span class="dogType">푸들</span></div>
           </div>
         </div>
       </div>
@@ -261,7 +261,7 @@
             document.querySelector('.pack-2').innerHTML = '14';
             document.querySelector('.pack-3').innerHTML = '14';
 
-            selectedRecipe = prompt('[풀플랜] 레시피 두 가지 중 하나 선택: sp/tb/dl/lb').toLowerCase();
+            selectedRecipe = prompt('[풀플랜] 레시피 두 가지 중 하나 선택: ' + recipeNames[0] + '/' + recipeNames[1]).toLowerCase();
             if (selectedRecipe === 'sp') {
               if (spWeight === 0) {
                 alert("잘못 선택했습니다.");
@@ -473,17 +473,19 @@
           document.querySelector('.dogStatus').innerHTML = dogStatus;
 
           //활동량
-          if (dogActivityLevel === 'VERY LITTLE') {
+          console.log(dogActivityLevel)
+          if (dogActivityLevel === 'VERY_LITTLE') {
             dogActivityLevel = '매우 적음';
           } else if (dogActivityLevel === 'LITTLE') {
             dogActivityLevel = '다소 적음';
           } else if (dogActivityLevel === 'MUCH') {
             dogActivityLevel = '많음';
-          } else if (dogActivityLevel === 'VERY MUCH') {
+          } else if (dogActivityLevel === 'VERY_MUCH') {
             dogActivityLevel = '매우 많음';
           } else {
             dogActivityLevel = '보통';
           }
+          console.log(dogActivityLevel)
           document.querySelector('.dogActivityLevel').innerHTML = dogActivityLevel;
 
           //간식량
@@ -558,9 +560,9 @@
           }
 
           prtContent = document.getElementById('print');
-          window.onbeforeprint = beforePrint;
-          window.onafterprint = afterPrint;
-          window.print();
+          // window.onbeforeprint = beforePrint;
+          // window.onafterprint = afterPrint;
+          // window.print();
 
         })
 
