@@ -79,7 +79,7 @@
 }
 
 .rectangle-10 {
-  border: 0.5px solid;
+  border: 2px solid;
   border-color: var(--black);
   height: 294px;
   left: 0;
@@ -89,6 +89,8 @@
 }
 
 .line-3 {
+  border: 0.5px solid;
+  border-color: var(--black);
   height: 1px;
   left: 0;
   position: absolute;
@@ -97,6 +99,8 @@
 }
 
 .line-4 {
+  border: 0.5px solid;
+  border-color: var(--black);
   height: 1px;
   left: 0;
   position: absolute;
@@ -105,6 +109,8 @@
 }
 
 .line-5 {
+  border: 0.5px solid;
+  border-color: var(--black);
   height: 1px;
   left: 0;
   position: absolute;
@@ -113,6 +119,8 @@
 }
 
 .line-6 {
+  border: 0.5px solid;
+  border-color: var(--black);
   height: 1px;
   left: 0;
   position: absolute;
@@ -121,6 +129,8 @@
 }
 
 .line-7 {
+  border: 0.5px solid;
+  border-color: var(--black);
   height: 1px;
   left: 0;
   position: absolute;
@@ -129,6 +139,8 @@
 }
 
 .line-8 {
+  border: 0.5px solid;
+  border-color: var(--black);
   height: 1px;
   left: 0;
   position: absolute;
@@ -137,6 +149,8 @@
 }
 
 .line-9 {
+  border: 0.5px solid;
+  border-color: var(--black);
   height: 294px;
   left: 110px;
   position: absolute;
@@ -145,6 +159,8 @@
 }
 
 .line-10 {
+  border: 0.5px solid;
+  border-color: var(--black);
   height: 167px;
   left: 239px;
   position: absolute;

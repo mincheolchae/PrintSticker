@@ -196,6 +196,8 @@
 }
 
 .frame-4 .line-12 {
+  border: 0.5px solid;
+  border-color: var(--black);
   height: 129px;
   left: 355px;
   position: absolute;
@@ -204,6 +206,8 @@
 }
 
 .frame-4 .line-13 {
+  border: 0.5px solid;
+  border-color: var(--black);
   height: 36px;
   left: 300px;
   position: absolute;
