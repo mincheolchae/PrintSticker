@@ -34,7 +34,7 @@ public class PrintController {
 
         List<ExcelData> dataList = new ArrayList<>();
 
-        String extension = FilenameUtils.getExtension(file.getOriginalFilename()); // 3
+        String extension = FilenameUtils.getExtension(file.getOriginalFilename());
 
         if (!extension.equals("xlsx") && !extension.equals("xls")) {
             throw new IOException("엑셀파일만 업로드 해주세요.");
@@ -50,7 +50,7 @@ public class PrintController {
 
         Sheet worksheet = workbook.getSheetAt(0);
 
-        for (int i = 1; i < worksheet.getPhysicalNumberOfRows(); i++) { // 4
+        for (int i = 1; i < worksheet.getPhysicalNumberOfRows(); i++) {
 
             Row row = worksheet.getRow(i);
 
@@ -91,18 +91,12 @@ public class PrintController {
             dataList.add(data);
         }
 
-        model.addAttribute("datas", dataList); // 5
+        model.addAttribute("datas", dataList);
 
 
         return "frame-4";
     }
 
-
-    private boolean isAllowedMIMEType(String mimeType) {
-        if (mimeType.equals("application/x-tika-ooxml"))
-            return true;
-        return false;
-    }
 
 
 }
