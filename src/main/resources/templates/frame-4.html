@@ -398,19 +398,71 @@
           document.querySelector('.x515g').style.lineHeight = 'normal';  //초기화
           let totalWidth = document.querySelector('.dogName').offsetWidth + document.querySelector('.recipeWeight').offsetWidth + document.querySelector('.space').offsetWidth + document.querySelector('.g').offsetWidth;
 
-          if (totalWidth >= 420) {
-            document.querySelector('.x515g').style.fontSize = '74px';
+          if (totalWidth >= 460) {
+            document.querySelector('.x515g').style.fontSize = '90px';
             document.querySelector('.x515g').style.lineHeight = '97px';
-            if (dogName.includes("(") && dogName.replaceAll("(", "").replaceAll(")", "").length === 3 && recipeWeight.toString().includes(".")) {
-              document.querySelector('.x515g').style.fontSize = '68px';
-            } else if (dogName.includes("(") && dogName.replaceAll("(", "").replaceAll(")", "").length > 3) {
-              if (recipeWeight.toString().includes(".")) {
-                document.querySelector('.x515g').style.fontSize = '61px';
-              } else {
-                document.querySelector('.x515g').style.fontSize = '67px';
+            if (dogName.includes("(") && dogName.replaceAll("(", "").replaceAll(")", "").length === 2) {
+              const nums = recipeWeight.toString().replaceAll(".", "").length;
+              if (nums === 4) {
+                document.querySelector('.x515g').style.fontSize = '81px';
+              } else if (nums === 5) {
+                document.querySelector('.x515g').style.fontSize = '74px';
               }
-            } else if (!dogName.includes("(") && dogName.length > 3) {
-              document.querySelector('.x515g').style.fontSize = '65px';
+            } else if (dogName.includes("(") && dogName.replaceAll("(", "").replaceAll(")", "").length === 3) {
+              const nums = recipeWeight.toString().replaceAll(".", "").length;
+              if (nums === 2) {
+                document.querySelector('.x515g').style.fontSize = '87px';
+              } else if (nums === 3) {
+                document.querySelector('.x515g').style.fontSize = '77px';
+              } else if (nums === 4) {
+                document.querySelector('.x515g').style.fontSize = '71px';
+              } else if (nums === 5) {
+                document.querySelector('.x515g').style.fontSize = '66px';
+              }
+            } else if (dogName.includes("(") && dogName.replaceAll("(", "").replaceAll(")", "").length === 4) {
+              const nums = recipeWeight.toString().replaceAll(".", "").length;
+              if (nums === 2) {
+                document.querySelector('.x515g').style.fontSize = '76px';
+              } else if (nums === 3) {
+                document.querySelector('.x515g').style.fontSize = '68px';
+              } else if (nums === 4) {
+                document.querySelector('.x515g').style.fontSize = '64px';
+              } else if (nums === 5) {
+                document.querySelector('.x515g').style.fontSize = '60px';
+              }
+            } else if (dogName.includes("(") && dogName.replaceAll("(", "").replaceAll(")", "").length > 4) {
+              document.querySelector('.x515g').style.fontSize = '54px';
+            } else if (!dogName.includes("(") && dogName.length === 2) {
+              const nums = recipeWeight.toString().replaceAll(".", "").length;
+              if (nums === 4) {
+                document.querySelector('.x515g').style.fontSize = '88px';
+              } else if (nums === 5) {
+                document.querySelector('.x515g').style.fontSize = '81px';
+              }
+            } else if (!dogName.includes("(") && dogName.length === 3) {
+              const nums = recipeWeight.toString().replaceAll(".", "").length;
+              if (nums === 2) {
+                document.querySelector('.x515g').style.fontSize = '90px';
+              } else if (nums === 3) {
+                document.querySelector('.x515g').style.fontSize = '84px';
+              } else if (nums === 4) {
+                document.querySelector('.x515g').style.fontSize = '77px';
+              } else if (nums === 5) {
+                document.querySelector('.x515g').style.fontSize = '71px';
+              }
+            } else if (!dogName.includes("(") && dogName.length === 4) {
+              const nums = recipeWeight.toString().replaceAll(".", "").length;
+              if (nums === 2) {
+                document.querySelector('.x515g').style.fontSize = '82px';
+              } else if (nums === 3) {
+                document.querySelector('.x515g').style.fontSize = '74px';
+              } else if (nums === 4) {
+                document.querySelector('.x515g').style.fontSize = '68px';
+              } else if (nums === 5) {
+                document.querySelector('.x515g').style.fontSize = '63px';
+              }
+            } else if (!dogName.includes("(") && dogName.length > 4) {
+              document.querySelector('.x515g').style.fontSize = '57px';
             }
           } else {
             document.querySelector('.x515g').style.fontSize = '90px';
