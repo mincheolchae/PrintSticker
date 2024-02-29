@@ -401,8 +401,16 @@
           if (totalWidth >= 420) {
             document.querySelector('.x515g').style.fontSize = '74px';
             document.querySelector('.x515g').style.lineHeight = '97px';
-            if (dogName.length >= 4) {
-              document.querySelector('.x515g').style.fontSize = '61px';
+            if (dogName.includes("(") && dogName.replaceAll("(", "").replaceAll(")", "").length === 3 && recipeWeight.toString().includes(".")) {
+              document.querySelector('.x515g').style.fontSize = '68px';
+            } else if (dogName.includes("(") && dogName.replaceAll("(", "").replaceAll(")", "").length > 3) {
+              if (recipeWeight.toString().includes(".")) {
+                document.querySelector('.x515g').style.fontSize = '61px';
+              } else {
+                document.querySelector('.x515g').style.fontSize = '67px';
+              }
+            } else if (!dogName.includes("(") && dogName.length > 3) {
+              document.querySelector('.x515g').style.fontSize = '65px';
             }
           } else {
             document.querySelector('.x515g').style.fontSize = '90px';
