@@ -252,7 +252,7 @@
           }
 
           let recipeNames = [];
-          for (let i=0; i<idx.length; i++) {
+          for (let i = 0; i < idx.length; i++) {
             if (idx[i] === 0) {
               recipeNames.push('SP');
             } else if (idx[i] === 1) {
@@ -484,7 +484,10 @@
           document.querySelector('.dogType').style.letterSpacing = '0';  //초기화
           document.querySelector('.dogType').innerHTML = dogType;
           let typeWidth = document.querySelector('.dogType').offsetWidth;
-          if (typeWidth > 150 && typeWidth <= 220) {
+          if ( typeWidth > 155 && typeWidth < 161) {
+            document.querySelector('.text-4').style.left = '308px';
+            document.querySelector('.dogType').style.letterSpacing = '-1px';
+          } else if (typeWidth >= 161 && typeWidth <= 220) {
             document.querySelector('.text-4').style.left = '308px';
             document.querySelector('.dogType').style.fontSize = '17px';
             document.querySelector('.dogType').style.letterSpacing = '-1px';
