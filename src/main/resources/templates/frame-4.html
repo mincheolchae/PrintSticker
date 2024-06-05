@@ -105,6 +105,10 @@
             <th scope="col" style="background-color: #bcaaa4">TB</th>
             <th scope="col" style="background-color: #bcaaa4">DL</th>
             <th scope="col" style="background-color: #bcaaa4">LB</th>
+            <th scope="col" style="background-color: #bcaaa4">PC</th>
+            <th scope="col" style="background-color: #bcaaa4">PT</th>
+            <th scope="col" style="background-color: #bcaaa4">PL</th>
+            <th scope="col" style="background-color: #bcaaa4">PB</th>
             <th scope="col" style="background-color: #bcaaa4">배송주기</th>
             <th scope="col" style="background-color: #bcaaa4">견 성별</th>
             <th scope="col" style="background-color: #bcaaa4">견 출생</th>
@@ -136,6 +140,10 @@
             <td th:text="${data.turkeyAndBeef}" style="background-color: #f8bbd0"></td>
             <td th:text="${data.duckAndLamb}" style="background-color: #f8bbd0"></td>
             <td th:text="${data.lambAndBeef}" style="background-color: #f8bbd0"></td>
+            <td th:text="${data.premiumChicken}" style="background-color: #f8bbd0"></td>
+            <td th:text="${data.premiumTurkey}" style="background-color: #f8bbd0"></td>
+            <td th:text="${data.premiumLamb}" style="background-color: #f8bbd0"></td>
+            <td th:text="${data.premiumBeef}" style="background-color: #f8bbd0"></td>
             <td th:text="${data.deliveryInterval}"></td>
             <td th:text="${data.dogGender}"></td>
             <td th:text="${data.dogBirth}"></td>
@@ -181,20 +189,24 @@
           let tb = children[10].innerHTML;  //TB
           let dl = children[11].innerHTML;  //DL
           let lb = children[12].innerHTML;  //LB
-          let deliveryInterval = children[13].innerHTML;  //배송주기
-          let dogGender = children[14].innerHTML;  //견 성별
-          let dogBirth = children[15].innerHTML;  //견 출생
-          let dogWeight = children[16].innerHTML;  //견 무게
-          let dogSize = children[17].innerHTML;  //견 무게
-          let dogNeutralization = children[18].innerHTML;  //중성화
-          let dogActivityLevel = children[19].innerHTML;  //활동량
-          let dogWalkingCountPerWeek = children[20].innerHTML;  //산책량(1주당)
-          let dogWalkingTimePerOneTime = children[21].innerHTML;  //산책량(1회당)
-          let dogStatus = children[22].innerHTML;  //견 현재상태
-          let dogSnackCountLevel = children[23].innerHTML;  //간식량
-          let dogInedibleFood = children[24].innerHTML;  //못먹는 음식
-          let dogInedibleFoodEtc = children[25].innerHTML;  //못먹는 음식 기타
-          let dogCaution = children[26].innerHTML;  //기타 질병
+          let pc = children[13].innerHTML;  //PC
+          let pt = children[14].innerHTML;  //PT
+          let pl = children[15].innerHTML;  //PL
+          let pb = children[16].innerHTML;  //PB
+          let deliveryInterval = children[17].innerHTML;  //배송주기
+          let dogGender = children[18].innerHTML;  //견 성별
+          let dogBirth = children[19].innerHTML;  //견 출생
+          let dogWeight = children[20].innerHTML;  //견 무게
+          let dogSize = children[21].innerHTML;  //견 무게
+          let dogNeutralization = children[22].innerHTML;  //중성화
+          let dogActivityLevel = children[23].innerHTML;  //활동량
+          let dogWalkingCountPerWeek = children[24].innerHTML;  //산책량(1주당)
+          let dogWalkingTimePerOneTime = children[25].innerHTML;  //산책량(1회당)
+          let dogStatus = children[26].innerHTML;  //견 현재상태
+          let dogSnackCountLevel = children[27].innerHTML;  //간식량
+          let dogInedibleFood = children[28].innerHTML;  //못먹는 음식
+          let dogInedibleFoodEtc = children[29].innerHTML;  //못먹는 음식 기타
+          let dogCaution = children[30].innerHTML;  //기타 질병
 
           //plan
           let plan;
@@ -239,8 +251,12 @@
           let tbWeight = parseFloat(tb);
           let dlWeight = parseFloat(dl);
           let lbWeight = parseFloat(lb);
+          let pcWeight = parseFloat(pc);
+          let ptWeight = parseFloat(pt);
+          let plWeight = parseFloat(pl);
+          let pbWeight = parseFloat(pb);
           let cnt = 0;
-          let arr = [spWeight, tbWeight, dlWeight, lbWeight];
+          let arr = [spWeight, tbWeight, dlWeight, lbWeight, pcWeight, ptWeight, plWeight, pbWeight];
           let idx = [];
           let map = new Map();
           for (let i = 0; i < arr.length; i++) {
@@ -261,6 +277,14 @@
               recipeNames.push('DL');
             } else if (idx[i] === 3) {
               recipeNames.push('LB');
+            } else if (idx[i] === 4) {
+              recipeNames.push('PC');
+            } else if (idx[i] === 5) {
+              recipeNames.push('PT');
+            } else if (idx[i] === 6) {
+              recipeNames.push('PL');
+            } else if (idx[i] === 7) {
+              recipeNames.push('PB');
             }
           }
 
@@ -272,85 +296,102 @@
             document.querySelector('.pack-3').innerHTML = '14';
 
             selectedRecipe = prompt('[풀플랜] 레시피 두 가지 중 하나 선택: ' + recipeNames[0] + '/' + recipeNames[1]).toLowerCase();
-            if (selectedRecipe === 'sp') {
-              if (spWeight === 0) {
-                alert("잘못 선택했습니다.");
-              }
-              for (let i = 0; i < recipeNames.length; i++) {
-                if (recipeNames[i].toLowerCase() === selectedRecipe) {
-                  if (i === 0) {
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-8').style.border = '1px solid';
-                    document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
-                  } else {
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-7').style.border = '1px solid';
-                    document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
-                  }
+            // if (selectedRecipe === 'sp') {
+            //   if (spWeight === 0) {
+            //     alert("잘못 선택했습니다.");
+            //   }
+            //   for (let i = 0; i < recipeNames.length; i++) {
+            //     if (recipeNames[i].toLowerCase() === selectedRecipe) {
+            //       if (i === 0) {
+            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
+            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
+            //         document.querySelector('.rectangle-8').style.border = '1px solid';
+            //         document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
+            //       } else {
+            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
+            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
+            //         document.querySelector('.rectangle-7').style.border = '1px solid';
+            //         document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
+            //       }
+            //     }
+            //   }
+            // } else if (selectedRecipe === 'tb') {
+            //   if (tbWeight === 0) {
+            //     alert("잘못 선택했습니다.")
+            //   }
+            //   for (let i = 0; i < recipeNames.length; i++) {
+            //     if (recipeNames[i].toLowerCase() === selectedRecipe) {
+            //       if (i === 0) {
+            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
+            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
+            //         document.querySelector('.rectangle-8').style.border = '1px solid';
+            //         document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
+            //       } else {
+            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
+            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
+            //         document.querySelector('.rectangle-7').style.border = '1px solid';
+            //         document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
+            //       }
+            //     }
+            //   }
+            // } else if (selectedRecipe === 'dl') {
+            //   if (dlWeight === 0) {
+            //     alert("잘못 선택했습니다.")
+            //   }
+            //   for (let i = 0; i < recipeNames.length; i++) {
+            //     if (recipeNames[i].toLowerCase() === selectedRecipe) {
+            //       if (i === 0) {
+            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
+            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
+            //         document.querySelector('.rectangle-8').style.border = '1px solid';
+            //         document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
+            //       } else {
+            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
+            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
+            //         document.querySelector('.rectangle-7').style.border = '1px solid';
+            //         document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
+            //       }
+            //     }
+            //   }
+            // } else if (selectedRecipe === 'lb') {
+            //   if (lbWeight === 0) {
+            //     alert("잘못 선택했습니다.")
+            //   }
+            //   for (let i = 0; i < recipeNames.length; i++) {
+            //     if (recipeNames[i].toLowerCase() === selectedRecipe) {
+            //       if (i === 0) {
+            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
+            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
+            //         document.querySelector('.rectangle-8').style.border = '1px solid';
+            //         document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
+            //       } else {
+            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
+            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
+            //         document.querySelector('.rectangle-7').style.border = '1px solid';
+            //         document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
+            //       }
+            //     }
+            //   }
+            // } else {
+            //   alert("잘못 입력하셨습니다.")
+            // }
+
+            for (let i = 0; i < recipeNames.length; i++) {
+              if (recipeNames[i].toLowerCase() === selectedRecipe) {
+                if (i === 0) {
+                  document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
+                  document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
+                  document.querySelector('.rectangle-8').style.border = '1px solid';
+                  document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
+                } else {
+                  document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
+                  document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
+                  document.querySelector('.rectangle-7').style.border = '1px solid';
+                  document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
                 }
               }
-            } else if (selectedRecipe === 'tb') {
-              if (tbWeight === 0) {
-                alert("잘못 선택했습니다.")
-              }
-              for (let i = 0; i < recipeNames.length; i++) {
-                if (recipeNames[i].toLowerCase() === selectedRecipe) {
-                  if (i === 0) {
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-8').style.border = '1px solid';
-                    document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
-                  } else {
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-7').style.border = '1px solid';
-                    document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
-                  }
-                }
-              }
-            } else if (selectedRecipe === 'dl') {
-              if (dlWeight === 0) {
-                alert("잘못 선택했습니다.")
-              }
-              for (let i = 0; i < recipeNames.length; i++) {
-                if (recipeNames[i].toLowerCase() === selectedRecipe) {
-                  if (i === 0) {
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-8').style.border = '1px solid';
-                    document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
-                  } else {
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-7').style.border = '1px solid';
-                    document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
-                  }
-                }
-              }
-            } else if (selectedRecipe === 'lb') {
-              if (lbWeight === 0) {
-                alert("잘못 선택했습니다.")
-              }
-              for (let i = 0; i < recipeNames.length; i++) {
-                if (recipeNames[i].toLowerCase() === selectedRecipe) {
-                  if (i === 0) {
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-8').style.border = '1px solid';
-                    document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
-                  } else {
-                    document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
-                    document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
-                    document.querySelector('.rectangle-7').style.border = '1px solid';
-                    document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
-                  }
-                }
-              }
-            } else {
-              alert("잘못 입력하셨습니다.")
             }
+
 
             document.querySelector('.sp-28').style.left = '-85px';
             document.querySelector('.rectangle-7').style.left = '50px';
@@ -379,6 +420,14 @@
               recipeWeight = dlWeight;
             } else if (lbWeight !== 0) {
               recipeWeight = lbWeight;
+            } else if (pcWeight !== 0) {
+              recipeWeight = pcWeight;
+            } else if (ptWeight !== 0) {
+              recipeWeight = ptWeight;
+            } else if (plWeight !== 0) {
+              recipeWeight = plWeight;
+            } else if (pbWeight !== 0) {
+              recipeWeight = pbWeight;
             }
           } else {  // 2 recipe full plan
             if (selectedRecipe === 'sp') {
@@ -389,6 +438,14 @@
               recipeWeight = dlWeight;
             } else if (selectedRecipe === 'lb') {
               recipeWeight = lbWeight;
+            } else if (selectedRecipe === 'pc') {
+              recipeWeight = pcWeight;
+            } else if (selectedRecipe === 'pt') {
+              recipeWeight = ptWeight;
+            } else if (selectedRecipe === 'pl') {
+              recipeWeight = plWeight;
+            } else if (selectedRecipe === 'pb') {
+              recipeWeight = pbWeight;
             }
           }
           document.querySelector('.recipeWeight').innerHTML = recipeWeight;

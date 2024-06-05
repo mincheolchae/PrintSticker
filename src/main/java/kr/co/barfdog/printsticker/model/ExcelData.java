@@ -22,6 +22,10 @@ public class ExcelData {
     private double turkeyAndBeef;  //TB
     private double duckAndLamb;  //DL
     private double lambAndBeef;  //LB
+    private double premiumChicken;  //PC
+    private double premiumTurkey;  //PT
+    private double premiumLamb;  //PL
+    private double premiumBeef;  //PB
     private int deliveryInterval;  //배송주기(일)
     private String dogGender;  //견 성별
     private int dogBirth;  //견 출생년월
