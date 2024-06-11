@@ -666,7 +666,7 @@
           }
 
           //기타 질병
-          document.querySelector('.dogCaution').innerHTML = dogCaution === null || 'NONE' || '' ? '없음' : dogCaution;
+          document.querySelector('.dogCaution').innerHTML = dogCaution === null || dogCaution === 'NONE' || dogCaution === '' ? '없음' : dogCaution;
           document.querySelector('.span3').style.fontSize = '22px'; //초기화
           document.querySelector('.span3').style.lineHeight = '38px'; //초기화
           document.querySelector('.x202106-32kg').style.lineHeight = '22px'; //초기화
