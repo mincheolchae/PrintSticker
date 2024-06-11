@@ -182,6 +182,7 @@
         fullDatum.addEventListener('click', function () {
           let children = fullDatum.children;
           let num = children[0].innerHTML;
+          let memberName = children[4].innerHTML;  //견주
           let dogType = children[6].innerHTML;  //견종
           let dogName = children[7].innerHTML;  //견명
           let numOfPacks = children[8].innerHTML;  //팩수
@@ -296,85 +297,42 @@
             document.querySelector('.pack-3').innerHTML = '14';
 
             selectedRecipe = prompt('[풀플랜] 레시피 두 가지 중 하나 선택: ' + recipeNames[0] + '/' + recipeNames[1]).toLowerCase();
-            // if (selectedRecipe === 'sp') {
-            //   if (spWeight === 0) {
-            //     alert("잘못 선택했습니다.");
-            //   }
-            //   for (let i = 0; i < recipeNames.length; i++) {
-            //     if (recipeNames[i].toLowerCase() === selectedRecipe) {
-            //       if (i === 0) {
-            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
-            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
-            //         document.querySelector('.rectangle-8').style.border = '1px solid';
-            //         document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
-            //       } else {
-            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
-            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
-            //         document.querySelector('.rectangle-7').style.border = '1px solid';
-            //         document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
-            //       }
-            //     }
-            //   }
-            // } else if (selectedRecipe === 'tb') {
-            //   if (tbWeight === 0) {
-            //     alert("잘못 선택했습니다.")
-            //   }
-            //   for (let i = 0; i < recipeNames.length; i++) {
-            //     if (recipeNames[i].toLowerCase() === selectedRecipe) {
-            //       if (i === 0) {
-            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
-            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
-            //         document.querySelector('.rectangle-8').style.border = '1px solid';
-            //         document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
-            //       } else {
-            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
-            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
-            //         document.querySelector('.rectangle-7').style.border = '1px solid';
-            //         document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
-            //       }
-            //     }
-            //   }
-            // } else if (selectedRecipe === 'dl') {
-            //   if (dlWeight === 0) {
-            //     alert("잘못 선택했습니다.")
-            //   }
-            //   for (let i = 0; i < recipeNames.length; i++) {
-            //     if (recipeNames[i].toLowerCase() === selectedRecipe) {
-            //       if (i === 0) {
-            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
-            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
-            //         document.querySelector('.rectangle-8').style.border = '1px solid';
-            //         document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
-            //       } else {
-            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
-            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
-            //         document.querySelector('.rectangle-7').style.border = '1px solid';
-            //         document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
-            //       }
-            //     }
-            //   }
-            // } else if (selectedRecipe === 'lb') {
-            //   if (lbWeight === 0) {
-            //     alert("잘못 선택했습니다.")
-            //   }
-            //   for (let i = 0; i < recipeNames.length; i++) {
-            //     if (recipeNames[i].toLowerCase() === selectedRecipe) {
-            //       if (i === 0) {
-            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
-            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
-            //         document.querySelector('.rectangle-8').style.border = '1px solid';
-            //         document.querySelector('.rectangle-8').style.borderColor = 'border-color: var(--black)';
-            //       } else {
-            //         document.querySelector('.rectangle-8').style.backgroundColor = 'var(--black)';
-            //         document.querySelector('.rectangle-7').style.backgroundColor = 'var(--white)';
-            //         document.querySelector('.rectangle-7').style.border = '1px solid';
-            //         document.querySelector('.rectangle-7').style.borderColor = 'border-color: var(--black)';
-            //       }
-            //     }
-            //   }
-            // } else {
-            //   alert("잘못 입력하셨습니다.")
-            // }
+            if (selectedRecipe === 'sp') {
+              if (spWeight === 0) {
+                alert("SP의 g수가 0 입니다.");
+              }
+            } else if (selectedRecipe === 'tb') {
+              if (tbWeight === 0) {
+                alert("TB의 g수가 0 입니다.");
+              }
+            } else if (selectedRecipe === 'dl') {
+              if (dlWeight === 0) {
+                alert("DL의 g수가 0 입니다.");
+              }
+            } else if (selectedRecipe === 'lb') {
+              if (lbWeight === 0) {
+                alert("LB의 g수가 0 입니다.");
+              }
+            } else if (selectedRecipe === 'pc') {
+              if (pcWeight === 0) {
+                alert("PC의 g수가 0 입니다.");
+              }
+            } else if (selectedRecipe === 'pt') {
+              if (ptWeight === 0) {
+                alert("PT의 g수가 0 입니다.");
+              }
+            } else if (selectedRecipe === 'pl') {
+              if (plWeight === 0) {
+                alert("PL의 g수가 0 입니다.");
+              }
+            } else if (selectedRecipe === 'pb') {
+              if (pbWeight === 0) {
+                alert("PB의 g수가 0 입니다.");
+              }
+            } else {
+              alert("잘못 입력하셨습니다.");
+            }
+
 
             for (let i = 0; i < recipeNames.length; i++) {
               if (recipeNames[i].toLowerCase() === selectedRecipe) {
@@ -695,7 +653,7 @@
           } else {
             tmp = selectedRecipe.toUpperCase();
           }
-          document.querySelector('.numbering').innerHTML = num + '/' + dogName + '/' + tmp + '/' + plan.toUpperCase();
+          document.querySelector('.numbering').innerHTML = num + '/' + memberName + '/' + dogName + '/' + tmp + '/' + plan.toUpperCase();
 
         });
       }
