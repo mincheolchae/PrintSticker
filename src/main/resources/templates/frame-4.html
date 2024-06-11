@@ -568,16 +568,16 @@
 
 
           //성별
-          document.querySelector('.dogGender').innerHTML = dogGender === 'MALE' ? '수컷' : '암컷';
+          document.querySelector('.dogGender').innerHTML = dogGender === 'MALE' || '수컷' ? '수컷' : '암컷';
 
           //중성화 여부
           document.querySelector('.dogNeutralization').innerHTML = dogNeutralization === 'YES' ? '완료' : '미완료';
 
           //몸무게
           document.querySelector('.dogWeight').innerHTML = dogWeight;
-          if (dogSize === 'LARGE') {
+          if (dogSize === 'LARGE' || dogSize === '대형') {
             dogSize = '대';
-          } else if (dogSize === 'MIDDLE') {
+          } else if (dogSize === 'MIDDLE' || dogSize === '중형') {
             dogSize = '중';
           } else {
             dogSize = '소';
@@ -587,15 +587,15 @@
           document.querySelector('.dogSize').innerHTML = dogSize;
 
           //현재 상태
-          if (dogStatus === 'LACTATING') {
+          if (dogStatus === 'LACTATING' || dogStatus === '수유중') {
             dogStatus = '수유중';
-          } else if (dogStatus === 'NEED_DIET') {
+          } else if (dogStatus === 'NEED_DIET' || dogStatus === '다이어트필요') {
             dogStatus = '다이어트필요';
             document.querySelector('.dogStatus').style.letterSpacing = '-1px';
             document.querySelector('.dogStatus').style.fontSize = '18px';
-          } else if (dogStatus === 'OBESITY') {
+          } else if (dogStatus === 'OBESITY' || dogStatus === '비만') {
             dogStatus = '비만';
-          } else if (dogStatus === 'PREGNANT') {
+          } else if (dogStatus === 'PREGNANT' || dogStatus === '임신중') {
             dogStatus = '임신중';
           } else {
             dogStatus = '건강함';
@@ -603,13 +603,13 @@
           document.querySelector('.dogStatus').innerHTML = dogStatus;
 
           //활동량
-          if (dogActivityLevel === 'VERY_LITTLE') {
+          if (dogActivityLevel === 'VERY_LITTLE' || dogActivityLevel === '매우 적음') {
             dogActivityLevel = '매우 적음';
-          } else if (dogActivityLevel === 'LITTLE') {
+          } else if (dogActivityLevel === 'LITTLE' || dogActivityLevel === '다소 적음') {
             dogActivityLevel = '다소 적음';
-          } else if (dogActivityLevel === 'MUCH') {
+          } else if (dogActivityLevel === 'MUCH' || dogActivityLevel === '다소 많음') {
             dogActivityLevel = '다소 많음';
-          } else if (dogActivityLevel === 'VERY_MUCH') {
+          } else if (dogActivityLevel === 'VERY_MUCH' || dogActivityLevel === '매우 많음') {
             dogActivityLevel = '매우 많음';
           } else {
             dogActivityLevel = '보통';
@@ -617,9 +617,9 @@
           document.querySelector('.dogActivityLevel').innerHTML = dogActivityLevel;
 
           //간식량
-          if (dogSnackCountLevel === 'LITTLE') {
+          if (dogSnackCountLevel === 'LITTLE' || dogSnackCountLevel === '적음') {
             dogSnackCountLevel = '적음';
-          } else if (dogSnackCountLevel === 'MUCH') {
+          } else if (dogSnackCountLevel === 'MUCH' || dogSnackCountLevel === '많음') {
             dogSnackCountLevel = '많음';
           } else {
             dogSnackCountLevel = '보통';
