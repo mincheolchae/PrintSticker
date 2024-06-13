@@ -140,10 +140,10 @@
             <td th:text="${data.turkeyAndBeef}" style="background-color: #f8bbd0"></td>
             <td th:text="${data.duckAndLamb}" style="background-color: #f8bbd0"></td>
             <td th:text="${data.lambAndBeef}" style="background-color: #f8bbd0"></td>
-            <td th:text="${data.premiumChicken}" style="background-color: #f8bbd0"></td>
-            <td th:text="${data.premiumTurkey}" style="background-color: #f8bbd0"></td>
-            <td th:text="${data.premiumLamb}" style="background-color: #f8bbd0"></td>
-            <td th:text="${data.premiumBeef}" style="background-color: #f8bbd0"></td>
+            <td th:text="${data.premiumChicken}" style="background-color: #f48fb1"></td>
+            <td th:text="${data.premiumTurkey}" style="background-color: #f48fb1"></td>
+            <td th:text="${data.premiumLamb}" style="background-color: #f48fb1"></td>
+            <td th:text="${data.premiumBeef}" style="background-color: #f48fb1"></td>
             <td th:text="${data.deliveryInterval}"></td>
             <td th:text="${data.dogGender}"></td>
             <td th:text="${data.dogBirth}"></td>
@@ -336,6 +336,9 @@
             if (recipeNames[0] === 'SP+' || recipeNames[0] === 'TB+' || recipeNames[0] === 'DL+' || recipeNames[0] === 'LB+') {
               document.querySelector('.space-1').innerHTML = '&nbsp;';
               document.querySelector('.space-2').innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+            } else {
+              document.querySelector('.space-1').innerHTML = '&nbsp;&nbsp;';
+              document.querySelector('.space-2').innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
             }
 
             for (let i = 0; i < recipeNames.length; i++) {
