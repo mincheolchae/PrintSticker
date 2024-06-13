@@ -42,8 +42,8 @@
               <div class="rectangle-8" style="display: none"></div>
               <p class="sp-28 gmarketsans-medium-black-23px">
                 <span class="selected-1" style="display: inline">선택 레시피:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="recipe">SP</span> (<span class="pack">28</span>팩)</span>
-                <span class="selected-2" style="display: none">선택 레시피:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="recipe-2">TB</span> (<span class="pack-2">14</span>팩)&nbsp;&nbsp;
-                |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="recipe-3">LB</span> (<span class="pack-3">14</span>팩)</span>
+                <span class="selected-2" style="display: none">선택 레시피:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="recipe-2">TB</span> (<span class="pack-2">14</span>팩)<span class="space-1">&nbsp;&nbsp;</span>
+                  |<span class="space-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="recipe-3">LB</span> (<span class="pack-3">14</span>팩)</span>
               </p>
             </div>
             <div class="overlap-group2">
@@ -101,10 +101,10 @@
             <th scope="col" style="background-color: #bcaaa4">견종</th>
             <th scope="col" style="background-color: #bcaaa4">견명</th>
             <th scope="col" style="background-color: #bcaaa4">팩수</th>
-            <th scope="col" style="background-color: #bcaaa4">SP</th>
-            <th scope="col" style="background-color: #bcaaa4">TB</th>
-            <th scope="col" style="background-color: #bcaaa4">DL</th>
-            <th scope="col" style="background-color: #bcaaa4">LB</th>
+            <th scope="col" style="background-color: #bcaaa4">SP+</th>
+            <th scope="col" style="background-color: #bcaaa4">TB+</th>
+            <th scope="col" style="background-color: #bcaaa4">DL+</th>
+            <th scope="col" style="background-color: #bcaaa4">LB+</th>
             <th scope="col" style="background-color: #bcaaa4">PC</th>
             <th scope="col" style="background-color: #bcaaa4">PT</th>
             <th scope="col" style="background-color: #bcaaa4">PL</th>
@@ -271,13 +271,13 @@
           let recipeNames = [];
           for (let i = 0; i < idx.length; i++) {
             if (idx[i] === 0) {
-              recipeNames.push('SP');
+              recipeNames.push('SP+');
             } else if (idx[i] === 1) {
-              recipeNames.push('TB');
+              recipeNames.push('TB+');
             } else if (idx[i] === 2) {
-              recipeNames.push('DL');
+              recipeNames.push('DL+');
             } else if (idx[i] === 3) {
-              recipeNames.push('LB');
+              recipeNames.push('LB+');
             } else if (idx[i] === 4) {
               recipeNames.push('PC');
             } else if (idx[i] === 5) {
@@ -296,7 +296,7 @@
             document.querySelector('.pack-2').innerHTML = '14';
             document.querySelector('.pack-3').innerHTML = '14';
 
-            selectedRecipe = prompt('[풀플랜] 레시피 두 가지 중 하나 선택: ' + recipeNames[0] + '/' + recipeNames[1]).toLowerCase();
+            selectedRecipe = prompt('[풀플랜] 레시피 두 가지 중 하나 선택: ' + recipeNames[0].replace('+', '') + '/' + recipeNames[1].replace('+', '')).toLowerCase();
             if (selectedRecipe === 'sp') {
               if (spWeight === 0) {
                 alert("SP의 g수가 0 입니다.");
@@ -333,9 +333,13 @@
               alert("잘못 입력하셨습니다.");
             }
 
+            if (recipeNames[0] === 'SP+' || recipeNames[0] === 'TB+' || recipeNames[0] === 'DL+' || recipeNames[0] === 'LB+') {
+              document.querySelector('.space-1').innerHTML = '&nbsp;';
+              document.querySelector('.space-2').innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+            }
 
             for (let i = 0; i < recipeNames.length; i++) {
-              if (recipeNames[i].toLowerCase() === selectedRecipe) {
+              if (recipeNames[i].toLowerCase().replace('+', '') === selectedRecipe) {
                 if (i === 0) {
                   document.querySelector('.rectangle-7').style.backgroundColor = 'var(--black)';
                   document.querySelector('.rectangle-8').style.backgroundColor = 'var(--white)';
@@ -652,6 +656,10 @@
             tmp = recipeNames[0];
           } else {
             tmp = selectedRecipe.toUpperCase();
+            console.log(tmp)
+            if (tmp === 'SP' || tmp === 'TB' || tmp === 'DL' || tmp === 'LB') {
+              tmp += '+';
+            }
           }
           document.querySelector('.numbering').innerHTML = num + '/' + memberName + '/' + dogName + '/' + tmp + '/' + plan.toUpperCase();
 
